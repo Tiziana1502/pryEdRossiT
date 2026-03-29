@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace pryEdRossiT
 {
-    public partial class frmDatosDelDesarrollador : Form
+    public partial class frmAlumnos : Form
     {
-        public frmDatosDelDesarrollador()
+        public frmAlumnos()
         {
             InitializeComponent();
         }
-
-        
     }
 }

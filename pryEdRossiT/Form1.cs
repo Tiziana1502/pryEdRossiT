@@ -36,8 +36,21 @@ namespace pryEdRossiT
 
         private void coloresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmColores v = new frmColores();
-            v.ShowDialog();
+            frmColores ven = new frmColores();
+            ven.ShowDialog();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClientes ven = new frmClientes();
+            ven.ShowDialog();
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAlumnos ven = new frmAlumnos();
+            ven.ShowDialog();
+
         }
     }
 }
