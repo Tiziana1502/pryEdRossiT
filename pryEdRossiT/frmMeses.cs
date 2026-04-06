@@ -17,6 +17,14 @@ namespace pryEdRossiT
             InitializeComponent();
         }
 
-        
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NombreArc = ("Meses.csv");
+            x.Grabar(txtNombre.Text);
+            x.Recorrer(lstMeses);
+
+            txtNombre.Text = "";
+        }
     }
 }

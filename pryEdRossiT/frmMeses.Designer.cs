@@ -68,6 +68,7 @@
             this.btnGrabar.TabIndex = 3;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // lstMeses
             // 
@@ -90,7 +91,7 @@
             this.Controls.Add(this.lblNombre);
             this.Name = "frmMeses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Meses";           
+            this.Text = "Meses";
             this.ResumeLayout(false);
             this.PerformLayout();
 

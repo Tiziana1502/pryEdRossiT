@@ -20,8 +20,10 @@ namespace pryEdRossiT
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
+            x.NombreArc = ("Colores.csv");
             x.Grabar(txtNombre.Text);
-            MessageBox.Show("EL DATO HA SIDO CARGADO");
+            x.Recorrer(lstColores);
+            
             txtNombre.Text = "";
         }
 
