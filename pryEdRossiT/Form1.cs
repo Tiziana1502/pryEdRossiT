@@ -52,5 +52,11 @@ namespace pryEdRossiT
             ven.ShowDialog();
 
         }
+
+        private void carrerasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCarreras ven = new frmCarreras();
+            ven.ShowDialog();
+        }
     }
 }

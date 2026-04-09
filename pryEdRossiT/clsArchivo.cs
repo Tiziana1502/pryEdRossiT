@@ -31,6 +31,12 @@ namespace pryEdRossiT
             AD.Close();
         }
 
+        public void LimpiarTodo()
+        {
+            StreamWriter AD = new StreamWriter(NombreArc, false); //Abre y pisa el que existe            
+            AD.Close();
+        }
+
         public void Recorrer(ListBox lstDatos)
         { 
             lstDatos.Items.Clear();

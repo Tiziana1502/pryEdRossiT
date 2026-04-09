@@ -38,5 +38,20 @@ namespace pryEdRossiT
                 btnGrabar.Enabled = true;
             }
         }
+
+        private void frmColores_Load(object sender, EventArgs e)
+        {
+            btnGrabar.Enabled=false;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NombreArc = ("Careras.csv");
+            x.LimpiarTodo();
+            x.Recorrer(lstColores);
+
+            txtColores.Text = "";
+        }
     }
 }

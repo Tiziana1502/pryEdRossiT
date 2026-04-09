@@ -1,6 +1,6 @@
 ﻿namespace pryEdRossiT
 {
-    partial class frmColores
+    partial class frmCarreras
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstColores = new System.Windows.Forms.ListBox();
+            this.lstCarreras = new System.Windows.Forms.ListBox();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtCarreras = new System.Windows.Forms.TextBox();
+            this.lblCarrera = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lstColores
+            // lstCarreras
             // 
-            this.lstColores.FormattingEnabled = true;
-            this.lstColores.Location = new System.Drawing.Point(23, 126);
-            this.lstColores.Name = "lstColores";
-            this.lstColores.Size = new System.Drawing.Size(202, 134);
-            this.lstColores.TabIndex = 9;
+            this.lstCarreras.FormattingEnabled = true;
+            this.lstCarreras.Location = new System.Drawing.Point(25, 123);
+            this.lstCarreras.Name = "lstCarreras";
+            this.lstCarreras.Size = new System.Drawing.Size(202, 134);
+            this.lstCarreras.TabIndex = 9;
             // 
             // btnGrabar
             // 
-            this.btnGrabar.Enabled = false;
-            this.btnGrabar.Location = new System.Drawing.Point(127, 74);
+            this.btnGrabar.Location = new System.Drawing.Point(129, 71);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(98, 23);
             this.btnGrabar.TabIndex = 8;
@@ -56,7 +55,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(23, 74);
+            this.btnLimpiar.Location = new System.Drawing.Point(25, 71);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(98, 23);
             this.btnLimpiar.TabIndex = 7;
@@ -64,38 +63,37 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // txtNombre
+            // txtCarreras
             // 
-            this.txtNombre.Location = new System.Drawing.Point(73, 25);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(152, 20);
-            this.txtNombre.TabIndex = 6;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtCarreras.Location = new System.Drawing.Point(75, 22);
+            this.txtCarreras.Name = "txtCarreras";
+            this.txtCarreras.Size = new System.Drawing.Size(152, 20);
+            this.txtCarreras.TabIndex = 6;
+            this.txtCarreras.TextChanged += new System.EventHandler(this.txtCarreras_TextChanged);
             // 
-            // lblNombre
+            // lblCarrera
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(20, 28);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
-            this.lblNombre.TabIndex = 5;
-            this.lblNombre.Text = "Nombre:";
+            this.lblCarrera.AutoSize = true;
+            this.lblCarrera.Location = new System.Drawing.Point(22, 25);
+            this.lblCarrera.Name = "lblCarrera";
+            this.lblCarrera.Size = new System.Drawing.Size(47, 13);
+            this.lblCarrera.TabIndex = 5;
+            this.lblCarrera.Text = "Nombre:";
             // 
-            // frmColores
+            // frmCarreras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(253, 283);
-            this.Controls.Add(this.lstColores);
+            this.ClientSize = new System.Drawing.Size(258, 286);
+            this.Controls.Add(this.lstCarreras);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNombre);
-            this.Name = "frmColores";
+            this.Controls.Add(this.txtCarreras);
+            this.Controls.Add(this.lblCarrera);
+            this.Name = "frmCarreras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nombre de Colores";
-            this.Load += new System.EventHandler(this.frmColores_Load);
+            this.Text = "frmCarreras";
+            this.Load += new System.EventHandler(this.frmCarreras_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,10 +101,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstColores;
+        private System.Windows.Forms.ListBox lstCarreras;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtCarreras;
+        private System.Windows.Forms.Label lblCarrera;
     }
 }
