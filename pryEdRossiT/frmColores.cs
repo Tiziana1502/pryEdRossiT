@@ -21,15 +21,15 @@ namespace pryEdRossiT
         {
             clsArchivo x = new clsArchivo();
             x.NombreArc = ("Colores.csv");
-            x.Grabar(txtNombre.Text);
+            x.Grabar(txtColores.Text);
             x.Recorrer(lstColores);
             
-            txtNombre.Text = "";
+            txtColores.Text = "";
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "")
+            if (txtColores.Text == "")
             {
                 btnGrabar.Enabled = false;
             }

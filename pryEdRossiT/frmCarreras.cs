@@ -30,7 +30,7 @@ namespace pryEdRossiT
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
-            x.NombreArc = ("Careras.csv");
+            x.NombreArc = ("Carreras.csv");
             x.LimpiarTodo();
             x.Recorrer(lstCarreras);
 

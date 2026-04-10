@@ -16,5 +16,42 @@ namespace pryEdRossiT
         {
             InitializeComponent();
         }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NombreArc = "Clientes.csv";
+            x.Grabar(txtCodigo.Text, txtNombre.Text, txtDeuda.Text);
+
+        }
+
+        private void frmClientes_Load(object sender, EventArgs e)
+        {
+            btnGrabar.Enabled = false;
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" && txtNombre.Text != "" && txtDeuda.Text != "")
+            {
+                btnGrabar.Enabled = false;
+            }
+            else
+            {
+                btnGrabar.Enabled = true;
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {            
+            clsArchivo x = new clsArchivo();
+            x.NombreArc = ("Clientes.csv");
+            x.LimpiarTodo();
+            //x.Recorrer();
+
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtDeuda.Text = "";
+        }
     }
 }

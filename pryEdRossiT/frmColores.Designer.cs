@@ -31,67 +31,74 @@
             this.lstColores = new System.Windows.Forms.ListBox();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtColores = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstColores
             // 
             this.lstColores.FormattingEnabled = true;
-            this.lstColores.Location = new System.Drawing.Point(23, 126);
+            this.lstColores.ItemHeight = 16;
+            this.lstColores.Location = new System.Drawing.Point(31, 155);
+            this.lstColores.Margin = new System.Windows.Forms.Padding(4);
             this.lstColores.Name = "lstColores";
-            this.lstColores.Size = new System.Drawing.Size(202, 134);
-            this.lstColores.TabIndex = 9;
+            this.lstColores.Size = new System.Drawing.Size(268, 164);
+            this.lstColores.TabIndex = 4;
             // 
             // btnGrabar
             // 
             this.btnGrabar.Enabled = false;
-            this.btnGrabar.Location = new System.Drawing.Point(127, 74);
+            this.btnGrabar.Location = new System.Drawing.Point(169, 91);
+            this.btnGrabar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(98, 23);
-            this.btnGrabar.TabIndex = 8;
+            this.btnGrabar.Size = new System.Drawing.Size(131, 28);
+            this.btnGrabar.TabIndex = 2;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(23, 74);
+            this.btnLimpiar.Location = new System.Drawing.Point(31, 91);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(98, 23);
-            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Size = new System.Drawing.Size(131, 28);
+            this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // txtNombre
+            // txtColores
             // 
-            this.txtNombre.Location = new System.Drawing.Point(73, 25);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(152, 20);
-            this.txtNombre.TabIndex = 6;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtColores.Location = new System.Drawing.Point(97, 31);
+            this.txtColores.Margin = new System.Windows.Forms.Padding(4);
+            this.txtColores.Name = "txtColores";
+            this.txtColores.Size = new System.Drawing.Size(201, 22);
+            this.txtColores.TabIndex = 1;
+            this.txtColores.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(20, 28);
+            this.lblNombre.Location = new System.Drawing.Point(27, 34);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
-            this.lblNombre.TabIndex = 5;
+            this.lblNombre.Size = new System.Drawing.Size(59, 16);
+            this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre:";
             // 
             // frmColores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(253, 283);
+            this.ClientSize = new System.Drawing.Size(337, 348);
             this.Controls.Add(this.lstColores);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtColores);
             this.Controls.Add(this.lblNombre);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmColores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nombre de Colores";
@@ -106,7 +113,7 @@
         private System.Windows.Forms.ListBox lstColores;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtColores;
         private System.Windows.Forms.Label lblNombre;
     }
 }

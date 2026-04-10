@@ -27,7 +27,19 @@ namespace pryEdRossiT
         {
             //Abrir archivo para escritura 
             StreamWriter AD = new StreamWriter(NombreArc, true);
-            AD.WriteLine(Dato);
+            AD.WriteLine(Dato); //WriteLine escribe una línea y le da el enter
+            AD.Close();
+        }
+
+        public void Grabar(string dato1, string dato2, string dato3)
+        {
+            //Abrir archivo para escritura 
+            StreamWriter AD = new StreamWriter(NombreArc, true);
+            AD.Write(dato1); //Write solo escribe una línea
+            AD.Write(";"); // ; sirve para que el siguientes dato se escriba en otra celda
+            AD.Write(dato2);
+            AD.Write(";");
+            AD.WriteLine(dato3);
             AD.Close();
         }
 
