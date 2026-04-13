@@ -20,7 +20,7 @@ namespace pryEdRossiT
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
-            x.NombreArc = ("Careras.csv");
+            x.NombreArc = ("Carreras.csv");
             x.Grabar(txtCarreras.Text);
             x.Recorrer(lstCarreras);
 
@@ -52,6 +52,11 @@ namespace pryEdRossiT
         private void frmCarreras_Load(object sender, EventArgs e)
         {
             btnGrabar.Enabled = false;
+        }
+
+        private void lstCarreras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -49,15 +49,15 @@ namespace pryEdRossiT
             AD.Close();
         }
 
-        public void Recorrer(ListBox lstDatos)
+        public void Recorrer(ListBox lst)
         { 
-            lstDatos.Items.Clear();
+            lst.Items.Clear();
             string DatoLeido = "";
             StreamReader AD = new StreamReader(NombreArc);
             DatoLeido = AD.ReadLine();
             while (DatoLeido != null)
             {
-                lstDatos.Items.Add(DatoLeido);
+                lst.Items.Add(DatoLeido);
                 DatoLeido = AD.ReadLine();
             }
             AD.Close();
@@ -65,29 +65,30 @@ namespace pryEdRossiT
 
          //Instancio una sobrecarga pero con combo box y datagridview
 
-        public void Recorrer(ComboBox cmbDatos)
+        public void Recorrer(ComboBox cmb)
         {
-            cmbDatos.Items.Clear();
             string DatoLeido = "";
+            cmb.Items.Clear();            
             StreamReader AD = new StreamReader(NombreArc);
             DatoLeido = AD.ReadLine();
             while (DatoLeido != null)
             {
-                cmbDatos.Items.Add(DatoLeido);
+                cmb.Items.Add(DatoLeido);
                 DatoLeido = AD.ReadLine();
             }
+            cmb.SelectedIndex = 0;
             AD.Close();
         }
 
-        public void Recorrer(DataGridView dgvDatos)
+        public void Recorrer(DataGridView Grilla)
         {
-            dgvDatos.Rows.Clear();
+            Grilla.Rows.Clear();
             string DatoLeido = "";
             StreamReader AD = new StreamReader(NombreArc);
             DatoLeido = AD.ReadLine();
             while (DatoLeido != null)
             {
-                dgvDatos.Rows.Add(DatoLeido);
+                Grilla.Rows.Add(DatoLeido.Split(';'));
                 DatoLeido = AD.ReadLine();
             }
             AD.Close();
