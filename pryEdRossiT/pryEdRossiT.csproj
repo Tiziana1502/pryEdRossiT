@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsArchivo.cs" />
+    <Compile Include="clsNodo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +71,12 @@
     </Compile>
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmColas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmColas.Designer.cs">
+      <DependentUpon>frmColas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmColores.cs">
       <SubType>Form</SubType>
@@ -102,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmColas.resx">
+      <DependentUpon>frmColas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmColores.resx">
       <DependentUpon>frmColores.cs</DependentUpon>
@@ -143,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Khia Avery.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cola.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

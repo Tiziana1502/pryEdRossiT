@@ -58,5 +58,11 @@ namespace pryEdRossiT
             frmCarreras ven = new frmCarreras();
             ven.ShowDialog();
         }
+
+        private void colaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmColas ven = new frmColas();
+            ven.ShowDialog();
+        }
     }
 }

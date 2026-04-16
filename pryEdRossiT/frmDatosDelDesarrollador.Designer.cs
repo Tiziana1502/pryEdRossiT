@@ -37,11 +37,12 @@
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Font = new System.Drawing.Font("Berlin Sans FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblTitulo.Location = new System.Drawing.Point(207, 300);
+            this.lblTitulo.Location = new System.Drawing.Point(49, 239);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(272, 38);
+            this.lblTitulo.Size = new System.Drawing.Size(219, 31);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "ACERCA DE MI...";
             // 
@@ -49,33 +50,34 @@
             // 
             this.pbaboutme.Image = ((System.Drawing.Image)(resources.GetObject("pbaboutme.Image")));
             this.pbaboutme.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbaboutme.InitialImage")));
-            this.pbaboutme.Location = new System.Drawing.Point(209, 36);
+            this.pbaboutme.Location = new System.Drawing.Point(51, 24);
+            this.pbaboutme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbaboutme.Name = "pbaboutme";
-            this.pbaboutme.Size = new System.Drawing.Size(249, 239);
+            this.pbaboutme.Size = new System.Drawing.Size(187, 194);
             this.pbaboutme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbaboutme.TabIndex = 3;
             this.pbaboutme.TabStop = false;
             // 
             // lblDatos
             // 
-            this.lblDatos.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatos.Location = new System.Drawing.Point(224, 350);
+            this.lblDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatos.Location = new System.Drawing.Point(62, 279);
+            this.lblDatos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDatos.Name = "lblDatos";
-            this.lblDatos.Size = new System.Drawing.Size(209, 127);
+            this.lblDatos.Size = new System.Drawing.Size(157, 103);
             this.lblDatos.TabIndex = 8;
             this.lblDatos.Text = "NOMBRE: Tiziana Nahir Rossi\r\nDNI: 47586152\r\nCARRERA: Analista en Sistemas de Comp" +
     "utación\r\nMATERIA: Estructura de Datos\r\nPROFESORA: Érica Bongiovanni";
             // 
             // frmDatosDelDesarrollador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(693, 522);
+            this.ClientSize = new System.Drawing.Size(300, 424);
             this.Controls.Add(this.lblDatos);
             this.Controls.Add(this.pbaboutme);
             this.Controls.Add(this.lblTitulo);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDatosDelDesarrollador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDatosDelDesarrollador";
