@@ -75,8 +75,7 @@ namespace pryEdRossiT
             {
                 cmb.Items.Add(DatoLeido);
                 DatoLeido = AD.ReadLine();
-            }
-            cmb.SelectedIndex = 0;
+            }            
             AD.Close();
         }
 

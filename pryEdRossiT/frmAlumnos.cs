@@ -22,9 +22,10 @@ namespace pryEdRossiT
         {
             clsArchivo objGrabar = new clsArchivo();
             objGrabar.NombreArc = "Carreras.csv";
-            objGrabar.Recorrer(cmbCarrera);                          
+            objGrabar.Recorrer(cmbCarrera);
 
-            if (File.Exists(objGrabar.NombreArc)) objGrabar.Recorrer(dgvAlumnos);
+            clsArchivo objAlumnos = new clsArchivo();
+            if (File.Exists(objAlumnos.NombreArc)) objAlumnos.Recorrer(dgvAlumnos);
             btnGrabar.Enabled = false;
 
         }
