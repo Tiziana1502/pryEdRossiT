@@ -17,6 +17,15 @@ namespace pryEdRossiT
             InitializeComponent();
         }
 
-        
+        clsCola FilaDePersonas = new clsCola();
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsNodo objNodo = new clsNodo();
+            objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+            objNodo.Nombre = txtNombre.Text;
+            objNodo.Tramite = txtTramite.Text;
+
+        }
     }
 }

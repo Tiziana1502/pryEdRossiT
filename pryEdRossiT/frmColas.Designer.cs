@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.dgvCola = new System.Windows.Forms.DataGridView();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lstListado = new System.Windows.Forms.ListBox();
             this.gbListado = new System.Windows.Forms.GroupBox();
             this.gbNuevo = new System.Windows.Forms.GroupBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTramite = new System.Windows.Forms.TextBox();
             this.lblTramite = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.gbEliminado = new System.Windows.Forms.GroupBox();
+            this.lblTramiteRdo = new System.Windows.Forms.Label();
+            this.lblNomRdo = new System.Windows.Forms.Label();
+            this.lblCodRdo = new System.Windows.Forms.Label();
             this.lblCod = new System.Windows.Forms.Label();
             this.lblTramit = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblNomb = new System.Windows.Forms.Label();
-            this.lblCodRdo = new System.Windows.Forms.Label();
-            this.lblNomRdo = new System.Windows.Forms.Label();
-            this.lblTramiteRdo = new System.Windows.Forms.Label();
             this.pbColas = new System.Windows.Forms.PictureBox();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).BeginInit();
             this.gbListado.SuspendLayout();
             this.gbNuevo.SuspendLayout();
@@ -71,6 +71,30 @@
             this.dgvCola.RowHeadersWidth = 51;
             this.dgvCola.Size = new System.Drawing.Size(313, 158);
             this.dgvCola.TabIndex = 8;
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.Frozen = true;
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.MinimumWidth = 6;
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.Width = 60;
+            // 
+            // colNombre
+            // 
+            this.colNombre.Frozen = true;
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.MinimumWidth = 6;
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Width = 125;
+            // 
+            // colDeuda
+            // 
+            this.colDeuda.Frozen = true;
+            this.colDeuda.HeaderText = "Trámite";
+            this.colDeuda.MinimumWidth = 6;
+            this.colDeuda.Name = "colDeuda";
+            this.colDeuda.Width = 125;
             // 
             // txtCodigo
             // 
@@ -96,6 +120,7 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lstListado
             // 
@@ -118,11 +143,11 @@
             // 
             // gbNuevo
             // 
-            this.gbNuevo.Controls.Add(this.textBox2);
+            this.gbNuevo.Controls.Add(this.txtTramite);
             this.gbNuevo.Controls.Add(this.lblCodigo);
             this.gbNuevo.Controls.Add(this.lblTramite);
             this.gbNuevo.Controls.Add(this.txtCodigo);
-            this.gbNuevo.Controls.Add(this.textBox1);
+            this.gbNuevo.Controls.Add(this.txtNombre);
             this.gbNuevo.Controls.Add(this.btnAgregar);
             this.gbNuevo.Controls.Add(this.lblNombre);
             this.gbNuevo.Location = new System.Drawing.Point(201, 12);
@@ -132,21 +157,12 @@
             this.gbNuevo.TabStop = false;
             this.gbNuevo.Text = "Nuevo Elemento";
             // 
-            // lblNombre
+            // txtTramite
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(18, 62);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
-            this.lblNombre.TabIndex = 15;
-            this.lblNombre.Text = "Nombre:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(67, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(85, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtTramite.Location = new System.Drawing.Point(67, 91);
+            this.txtTramite.Name = "txtTramite";
+            this.txtTramite.Size = new System.Drawing.Size(85, 20);
+            this.txtTramite.TabIndex = 18;
             // 
             // lblTramite
             // 
@@ -157,12 +173,21 @@
             this.lblTramite.TabIndex = 17;
             this.lblTramite.Text = "Tramite:";
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 91);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(85, 20);
-            this.textBox2.TabIndex = 18;
+            this.txtNombre.Location = new System.Drawing.Point(67, 58);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(85, 20);
+            this.txtNombre.TabIndex = 16;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(18, 62);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.TabIndex = 15;
+            this.lblNombre.Text = "Nombre:";
             // 
             // gbEliminado
             // 
@@ -179,6 +204,30 @@
             this.gbEliminado.TabIndex = 19;
             this.gbEliminado.TabStop = false;
             this.gbEliminado.Text = "Elemento Eliminado";
+            // 
+            // lblTramiteRdo
+            // 
+            this.lblTramiteRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTramiteRdo.Location = new System.Drawing.Point(67, 90);
+            this.lblTramiteRdo.Name = "lblTramiteRdo";
+            this.lblTramiteRdo.Size = new System.Drawing.Size(85, 20);
+            this.lblTramiteRdo.TabIndex = 21;
+            // 
+            // lblNomRdo
+            // 
+            this.lblNomRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNomRdo.Location = new System.Drawing.Point(67, 61);
+            this.lblNomRdo.Name = "lblNomRdo";
+            this.lblNomRdo.Size = new System.Drawing.Size(85, 20);
+            this.lblNomRdo.TabIndex = 20;
+            // 
+            // lblCodRdo
+            // 
+            this.lblCodRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCodRdo.Location = new System.Drawing.Point(90, 34);
+            this.lblCodRdo.Name = "lblCodRdo";
+            this.lblCodRdo.Size = new System.Drawing.Size(62, 20);
+            this.lblCodRdo.TabIndex = 19;
             // 
             // lblCod
             // 
@@ -216,30 +265,6 @@
             this.lblNomb.TabIndex = 15;
             this.lblNomb.Text = "Nombre:";
             // 
-            // lblCodRdo
-            // 
-            this.lblCodRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCodRdo.Location = new System.Drawing.Point(90, 34);
-            this.lblCodRdo.Name = "lblCodRdo";
-            this.lblCodRdo.Size = new System.Drawing.Size(62, 20);
-            this.lblCodRdo.TabIndex = 19;
-            // 
-            // lblNomRdo
-            // 
-            this.lblNomRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNomRdo.Location = new System.Drawing.Point(67, 61);
-            this.lblNomRdo.Name = "lblNomRdo";
-            this.lblNomRdo.Size = new System.Drawing.Size(85, 20);
-            this.lblNomRdo.TabIndex = 20;
-            // 
-            // lblTramiteRdo
-            // 
-            this.lblTramiteRdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTramiteRdo.Location = new System.Drawing.Point(67, 90);
-            this.lblTramiteRdo.Name = "lblTramiteRdo";
-            this.lblTramiteRdo.Size = new System.Drawing.Size(85, 20);
-            this.lblTramiteRdo.TabIndex = 21;
-            // 
             // pbColas
             // 
             this.pbColas.Image = global::pryEdRossiT.Properties.Resources.cola;
@@ -249,30 +274,6 @@
             this.pbColas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbColas.TabIndex = 0;
             this.pbColas.TabStop = false;
-            // 
-            // colCodigo
-            // 
-            this.colCodigo.Frozen = true;
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.MinimumWidth = 6;
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.Width = 60;
-            // 
-            // colNombre
-            // 
-            this.colNombre.Frozen = true;
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.MinimumWidth = 6;
-            this.colNombre.Name = "colNombre";
-            this.colNombre.Width = 125;
-            // 
-            // colDeuda
-            // 
-            this.colDeuda.Frozen = true;
-            this.colDeuda.HeaderText = "Trámite";
-            this.colDeuda.MinimumWidth = 6;
-            this.colDeuda.Name = "colDeuda";
-            this.colDeuda.Width = 125;
             // 
             // frmColas
             // 
@@ -307,9 +308,9 @@
         private System.Windows.Forms.ListBox lstListado;
         private System.Windows.Forms.GroupBox gbListado;
         private System.Windows.Forms.GroupBox gbNuevo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTramite;
         private System.Windows.Forms.Label lblTramite;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.GroupBox gbEliminado;
         private System.Windows.Forms.Label lblCod;
