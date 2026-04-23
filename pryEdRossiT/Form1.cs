@@ -64,5 +64,23 @@ namespace pryEdRossiT
             frmColas ven = new frmColas();
             ven.ShowDialog();
         }
+
+        private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPilas ven = new frmPilas();
+            ven.ShowDialog();
+        }
+
+        private void listaSimpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaSimple ven = new frmListaSimple();
+            ven.ShowDialog();
+        }
+
+        private void listaDobleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaDoble ven = new frmListaDoble();
+            ven.ShowDialog();
+        }
     }
 }

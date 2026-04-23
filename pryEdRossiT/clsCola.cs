@@ -89,5 +89,23 @@ namespace pryEdRossiT
             }
 
         }
+
+        public void Recorrer(string NombreArchivo)
+        {
+            clsNodo Aux = Primero;
+            StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);
+            AD.WriteLine("Lista de espera\n");
+            AD.WriteLine("Código; Nombre; Trámite");
+            while (Aux != null)
+            {
+                AD.Write(Aux.Codigo);
+                AD.Write(";");
+                AD.Write(Aux.Nombre);
+                AD.Write(";");
+                AD.WriteLine(Aux.Tramite);
+                Aux = Aux.Siguiente;
+            }
+            AD.Close();
+        }
     }
 }
