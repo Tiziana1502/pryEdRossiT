@@ -124,6 +124,7 @@
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblNomb
             // 
@@ -198,6 +199,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblNombre
             // 
@@ -267,7 +269,7 @@
             // 
             // pbColas
             // 
-            this.pbColas.Image = global::pryEdRossiT.Properties.Resources.Pila_svg;
+            this.pbColas.Image = global::pryEdRossiT.Properties.Resources.pila;
             this.pbColas.Location = new System.Drawing.Point(25, 21);
             this.pbColas.Name = "pbColas";
             this.pbColas.Size = new System.Drawing.Size(157, 146);

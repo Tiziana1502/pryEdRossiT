@@ -123,6 +123,16 @@ namespace pryEdRossiT.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pila {
+            get {
+                object obj = ResourceManager.GetObject("pila", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pila_svg {
             get {
                 object obj = ResourceManager.GetObject("Pila.svg", resourceCulture);
