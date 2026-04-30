@@ -74,6 +74,7 @@
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(97, 21);
             this.cmbCodigo.TabIndex = 7;
+            this.cmbCodigo.SelectedIndexChanged += new System.EventHandler(this.cmbCodigo_SelectedIndexChanged);
             // 
             // lblCod
             // 
@@ -92,6 +93,7 @@
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // gbNuevo
             // 
@@ -115,6 +117,7 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(85, 20);
             this.txtTramite.TabIndex = 5;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // lblCodigo
             // 
@@ -148,6 +151,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(85, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // btnAgregar
             // 
@@ -157,6 +161,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblNombre
             // 

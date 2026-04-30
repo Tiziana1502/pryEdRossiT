@@ -21,22 +21,24 @@ namespace pryEdRossiT
 
         private void frmPilas_Load(object sender, EventArgs e)
         {
-            clsArchivo x = new clsArchivo();
-            x.NombreArc = "Pila.csv";
-            if (File.Exists(x.NombreArc)) x.Recorrer(dgvPila);           
+                     
             btnAgregar.Enabled = false;
+        }
+        private void ValidarDatos()
+        {
+            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
-            {
-                btnAgregar.Enabled = false;
-            }
-            else
-            {
-                btnAgregar.Enabled = true;
-            }
+           ValidarDatos();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -77,6 +79,16 @@ namespace pryEdRossiT
                 lblNomRdo.Text = "";
                 lblTramiteRdo.Text = "";
             }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
     }
 }
