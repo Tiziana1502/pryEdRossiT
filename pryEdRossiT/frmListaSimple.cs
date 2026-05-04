@@ -96,7 +96,9 @@ namespace pryEdRossiT
 
         private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ValidarDatos();
+            if (cmbCodigo.SelectedIndex != -1)
+            { 
+            }
         }
 
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)

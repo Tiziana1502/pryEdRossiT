@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Libreria que permite procesar archivos
-using System.IO;
 using System.Windows.Forms;
 
 namespace pryEdRossiT
 {
-    
-    internal class clsListaSimple
+    internal class clsListaDoble
     {
-        //Formada por nodos secuenciales, los datos se ordenan segun procedimientos del desarrollador 
+        //Formada por nodos, contienen 3 partes, los datos y el puntero del dato anterior y ultimo, se puede recorrer en ambas direcciones
         //Campos de la clase
         private clsNodo pri;
+        private clsNodo ult;
 
         //Propiedades
         public clsNodo Primero
@@ -22,59 +21,57 @@ namespace pryEdRossiT
             get { return pri; }
             set { pri = value; }
         }
+        public clsNodo Ultimo
+        {
+            get { return ult; }
+            set { ult = value; }
+        }
 
         public void Agregar(clsNodo Nuevo)
         {
             if (Primero == null)
             {
                 Primero = Nuevo;
+                Ultimo = Nuevo;
             }
-            else
+            else 
             {
-                //Si el nuevo dato es menos al que ya existe 
                 if (Nuevo.Codigo < Primero.Codigo)
                 {
                     Nuevo.Siguiente = Primero;
+                    Primero.Anterior = Nuevo;
                     Primero = Nuevo;
                 }
-                //Cuando el nuevo dato se encuentre entre dos numeros
-                else
+                else 
                 {
-                    clsNodo aux = Primero;
-                    clsNodo ant = aux; //antes de pasar al siguiente numero guardo el dato anterior
-                    while (aux.Codigo < Nuevo.Codigo) 
+                    if (Nuevo.Codigo > Primero.Codigo)
                     {
-                        ant = aux;
-                        aux = aux.Siguiente;
-                        if (aux == null) break;
+                        Ultimo.Siguiente = Nuevo;
+                        Nuevo.Anterior = Primero;
+                        Ultimo = Nuevo;
                     }
-                    ant.Siguiente = Nuevo;
-                    Nuevo.Siguiente = aux;
-                }
+                    else
+                    {
+                        clsNodo Aux = Primero;
+                        clsNodo Ant = Primero;
+                        while (Aux.Codigo < Nuevo.Codigo)
+                        { 
+                            Ant = Aux;
+                            Aux = Aux.Siguiente;
+                        }
+                        Ant.Siguiente = Nuevo;
+                        Nuevo.Siguiente = Aux;
+                        Aux.Anterior = Nuevo;
+                        Nuevo.Anterior = Ant;
 
+                    }
+                }
             }
         }
-        public void Eliminar(Int32 Codigo)
+        public void Eliminar()
         {
-            if (Primero.Codigo == Codigo)
-            {
-                Primero = Primero.Siguiente; //El codigo esta en el primer nodo
-            }
-            else
-            {
-                clsNodo Aux = Primero;
-                clsNodo Ant = Primero;
-                while (Aux != null && Aux.Codigo != Codigo)
-                {
-                    Ant = Aux;
-                    Aux = Aux.Siguiente;
-                }
-                Ant.Siguiente = Aux.Siguiente;
 
-
-            }
         }
-
         public void Recorrer(DataGridView Grilla)
         {
             clsNodo Aux = Primero;
@@ -107,11 +104,12 @@ namespace pryEdRossiT
                 Aux = Aux.Siguiente;
             }
 
-        }
+        }        
+
         public void Recorrer(string NombreArchivo)
         {
             clsNodo Aux = Primero;
-            StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);            
+            StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);
             AD.WriteLine("Código; Nombre; Trámite");
             while (Aux != null)
             {

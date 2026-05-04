@@ -13,6 +13,7 @@ namespace pryEdRossiT
         private string Nom;
         private string Tra;
         private clsNodo Sig;
+        private clsNodo Ant;
 
         //Propiedades del nodo
         public Int32 Codigo
@@ -37,6 +38,12 @@ namespace pryEdRossiT
         { 
             get { return Sig; } 
             set { Sig = value; }
+        }
+
+        public clsNodo Anterior
+        {
+            get { return Ant; } 
+            set { Ant = value; }
         }
     }
 
