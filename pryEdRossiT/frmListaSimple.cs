@@ -75,13 +75,37 @@ namespace pryEdRossiT
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
-            objLista.Eliminar(Convert.ToInt32(cmbCodigo.Text));
-          
+            if (objLista.Primero != null)
+            {
+                Int32 x = Convert.ToInt32(cmbCodigo.Text);
+                objLista.Eliminar(x);
+                objLista.Recorrer(dgvListaSimple);
+                objLista.Recorrer("ListaSimple.csv");
+                objLista.Recorrer(lstListaSimple);
+                objLista.Recorrer(cmbCodigo);
+
+            }
+            else 
+            {
+                MessageBox.Show("La lista esta vacia", "Lista sin datos", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            btnEliminar.Enabled = false;
+
         }
 
         private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
         {
             ValidarDatos();
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo permite números (char.IsDigit) y la tecla de borrar (char.IsControl)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea cualquier otro caracter
+            }
         }
     }
 }

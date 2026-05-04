@@ -29,17 +29,21 @@ namespace pryEdRossiT
             btnGrabar.Enabled = false;
 
         }
-
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        private void ValidarDatos()
         {
-            if (txtNombre.Text != "" && txtNombre.Text != "" && cmbCarrera.Text != "")
-            {
-                btnGrabar.Enabled = false;
-            }
-            else
+            if (txtCodigo.Text != "" && txtNombre.Text != "")
             {
                 btnGrabar.Enabled = true;
             }
+            else
+            {
+                btnGrabar.Enabled = false;
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -59,6 +63,25 @@ namespace pryEdRossiT
             txtCodigo.Text = "";
             txtNombre.Text = "";
             cmbCarrera.Text = "";
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo permite números (char.IsDigit) y la tecla de borrar (char.IsControl)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea cualquier otro caracter
+            }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
     }
 }

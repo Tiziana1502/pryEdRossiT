@@ -35,17 +35,21 @@ namespace pryEdRossiT
             if (File.Exists(x.NombreArc)) x.Recorrer(dgvClientes);
             btnGrabar.Enabled = false;
         }
-
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        private void ValidarDatos()
         {
-            if (txtNombre.Text != "" && txtNombre.Text != "" && txtDeuda.Text != "")
-            {
-                btnGrabar.Enabled = false;
-            }
-            else
+            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtDeuda.Text != "")
             {
                 btnGrabar.Enabled = true;
             }
+            else
+            {
+                btnGrabar.Enabled = false;
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -58,6 +62,34 @@ namespace pryEdRossiT
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtDeuda.Text = "";
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtDeuda_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo permite números (char.IsDigit) y la tecla de borrar (char.IsControl)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea cualquier otro caracter
+            }
+        }
+
+        private void txtDeuda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Solo permite números (char.IsDigit) y la tecla de borrar (char.IsControl)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea cualquier otro caracter
+            }
         }
     }
 }

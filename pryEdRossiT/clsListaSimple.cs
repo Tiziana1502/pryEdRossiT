@@ -58,18 +58,20 @@ namespace pryEdRossiT
         {
             if (Primero.Codigo == Codigo)
             {
-                Primero = Primero.Siguiente;
+                Primero = Primero.Siguiente; //El codigo esta en el primer nodo
             }
             else
             {
                 clsNodo Aux = Primero;
                 clsNodo Ant = Primero;
-                while (Aux.Codigo != Codigo)
+                while (Aux != null && Aux.Codigo != Codigo)
                 {
                     Ant = Aux;
                     Aux = Aux.Siguiente;
                 }
                 Ant.Siguiente = Aux.Siguiente;
+
+
             }
         }
 

@@ -26,17 +26,31 @@ namespace pryEdRossiT
             if (File.Exists(x.NombreArc)) x.Recorrer(dgvListaDoble);
             btnAgregar.Enabled = false;
         }
-
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        private void ValidarDatos()
         {
             if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
             {
-                btnAgregar.Enabled = false;
+                btnAgregar.Enabled = true;
             }
             else
             {
-                btnAgregar.Enabled = true;
+                btnAgregar.Enabled = false;
             }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
     }
 }
