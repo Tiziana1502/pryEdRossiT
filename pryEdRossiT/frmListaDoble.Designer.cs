@@ -66,7 +66,7 @@
             this.gbEliminado.Location = new System.Drawing.Point(370, 11);
             this.gbEliminado.Name = "gbEliminado";
             this.gbEliminado.Size = new System.Drawing.Size(169, 97);
-            this.gbEliminado.TabIndex = 24;
+            this.gbEliminado.TabIndex = 1;
             this.gbEliminado.TabStop = false;
             this.gbEliminado.Text = "Elemento a eliminar";
             // 
@@ -77,7 +77,8 @@
             this.cmbCodigo.Location = new System.Drawing.Point(61, 27);
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(97, 21);
-            this.cmbCodigo.TabIndex = 7;
+            this.cmbCodigo.TabIndex = 1;
+            this.cmbCodigo.SelectedIndexChanged += new System.EventHandler(this.cmbCodigo_SelectedIndexChanged);
             // 
             // lblCod
             // 
@@ -94,9 +95,10 @@
             this.btnEliminar.Location = new System.Drawing.Point(27, 54);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(131, 34);
-            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // gbNuevo
             // 
@@ -110,7 +112,7 @@
             this.gbNuevo.Location = new System.Drawing.Point(195, 11);
             this.gbNuevo.Name = "gbNuevo";
             this.gbNuevo.Size = new System.Drawing.Size(169, 176);
-            this.gbNuevo.TabIndex = 22;
+            this.gbNuevo.TabIndex = 0;
             this.gbNuevo.TabStop = false;
             this.gbNuevo.Text = "Nuevo Elemento";
             // 
@@ -185,7 +187,7 @@
             this.gbListado.Location = new System.Drawing.Point(6, 204);
             this.gbListado.Name = "gbListado";
             this.gbListado.Size = new System.Drawing.Size(533, 204);
-            this.gbListado.TabIndex = 25;
+            this.gbListado.TabIndex = 0;
             this.gbListado.TabStop = false;
             this.gbListado.Text = "Listado en una Lista y una Grilla";
             // 
@@ -195,7 +197,7 @@
             this.lstListaDoble.Location = new System.Drawing.Point(16, 19);
             this.lstListaDoble.Name = "lstListaDoble";
             this.lstListaDoble.Size = new System.Drawing.Size(157, 160);
-            this.lstListaDoble.TabIndex = 1;
+            this.lstListaDoble.TabIndex = 0;
             // 
             // dgvListaDoble
             // 
@@ -242,7 +244,7 @@
             this.groupBox1.Location = new System.Drawing.Point(370, 114);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(169, 73);
-            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listar Datos";
             // 
@@ -257,6 +259,7 @@
             this.rbDescendente.TabStop = true;
             this.rbDescendente.Text = "Descendente";
             this.rbDescendente.UseVisualStyleBackColor = true;
+            this.rbDescendente.CheckedChanged += new System.EventHandler(this.rbDescendente_CheckedChanged);
             // 
             // rbAscendente
             // 
@@ -269,6 +272,7 @@
             this.rbAscendente.TabStop = true;
             this.rbAscendente.Text = "Ascendente";
             this.rbAscendente.UseVisualStyleBackColor = true;
+            this.rbAscendente.CheckedChanged += new System.EventHandler(this.rbAscendente_CheckedChanged);
             // 
             // pbColas
             // 

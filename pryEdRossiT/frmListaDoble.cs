@@ -21,9 +21,7 @@ namespace pryEdRossiT
         clsListaDoble ObjDoble = new clsListaDoble();
         private void frmListaDoble_Load(object sender, EventArgs e)
         {
-            clsArchivo x = new clsArchivo();
-            x.NombreArc = "ListaDoble.csv";
-            if (File.Exists(x.NombreArc)) x.Recorrer(dgvListaDoble);
+           
             btnAgregar.Enabled = false;
         }
         private void ValidarDatos()
@@ -71,6 +69,55 @@ namespace pryEdRossiT
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtTramite.Text = "";
+        }
+
+        private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCodigo.Text != "")
+            {
+                btnEliminar.Enabled = true;
+            }
+            else
+            {
+                btnEliminar.Enabled = false;
+            }
+        }
+
+        private void rbAscendente_CheckedChanged(object sender, EventArgs e)
+        {
+            clsNodo x = new clsNodo();
+            ObjDoble.Recorrer(dgvListaDoble);
+            ObjDoble.Recorrer(lstListaDoble);
+            ObjDoble.Recorrer(cmbCodigo);
+
+        }
+
+        private void rbDescendente_CheckedChanged(object sender, EventArgs e)
+        {
+            clsNodo x = new clsNodo();
+            ObjDoble.RecorrerDesc(dgvListaDoble);
+            ObjDoble.RecorrerDesc(lstListaDoble);
+            ObjDoble.RecorrerDesc(cmbCodigo);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)        {
+            
+            if (ObjDoble.Primero != null)
+            {
+                Int32 x = Convert.ToInt32(cmbCodigo.Text);              
+                ObjDoble.Recorrer(dgvListaDoble);
+                ObjDoble.Recorrer("ListaDoble.csv");
+                ObjDoble.Recorrer(lstListaDoble);
+                ObjDoble.Recorrer(cmbCodigo);
+                ObjDoble.Eliminar(x);
+
+            }
+            else
+            {
+                MessageBox.Show("La lista esta vacia", "Lista sin datos",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            btnEliminar.Enabled = false;
         }
     }
 }

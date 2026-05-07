@@ -96,8 +96,13 @@ namespace pryEdRossiT
 
         private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCodigo.SelectedIndex != -1)
-            { 
+            if (cmbCodigo.Text != "")
+            {
+                btnEliminar.Enabled = true;
+            }
+            else
+            {
+                btnEliminar.Enabled = false;
             }
         }
 
