@@ -24,6 +24,7 @@ namespace pryEdRossiT
         {
             
             btnAgregar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void ValidarDatos()
@@ -75,22 +76,25 @@ namespace pryEdRossiT
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
-            if (objLista.Primero != null)
+            if (cmbCodigo.SelectedIndex != -1)
             {
-                Int32 x = Convert.ToInt32(cmbCodigo.Text);
-                objLista.Eliminar(x);
-                objLista.Recorrer(dgvListaSimple);
-                objLista.Recorrer("ListaSimple.csv");
-                objLista.Recorrer(lstListaSimple);
-                objLista.Recorrer(cmbCodigo);
+                if (objLista.Primero != null)
+                {
+                    Int32 x = Convert.ToInt32(cmbCodigo.Text);
+                    objLista.Eliminar(x);
+                    objLista.Recorrer(dgvListaSimple);
+                    objLista.Recorrer("ListaSimple.csv");
+                    objLista.Recorrer(lstListaSimple);
+                    objLista.Recorrer(cmbCodigo);
 
-            }
-            else 
-            {
-                MessageBox.Show("La lista esta vacia", "Lista sin datos", 
+                }
+                else 
+                {
+                    MessageBox.Show("La lista esta vacia", "Lista sin datos", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                btnEliminar.Enabled = false;
             }
-            btnEliminar.Enabled = false;
 
         }
 

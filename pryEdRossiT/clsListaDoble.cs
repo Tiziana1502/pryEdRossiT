@@ -94,7 +94,7 @@ namespace pryEdRossiT
                     {
                         clsNodo aux = Primero;
                         clsNodo ant = Primero;
-                        while (aux.Codigo < Codigo)
+                        while (aux != null && aux.Codigo != Codigo)
                         {
                             ant = aux;
                             aux = aux.Siguiente;
@@ -134,7 +134,7 @@ namespace pryEdRossiT
             Lista.Items.Clear();
             while (Aux != null)
             {
-                Lista.Items.Add(Aux.Nombre);
+                Lista.Items.Add(Aux.Codigo);
                 Aux = Aux.Siguiente;
             }
 
@@ -145,7 +145,7 @@ namespace pryEdRossiT
             Lista.Items.Clear();
             while (Aux != null)
             {
-                Lista.Items.Add(Aux.Nombre);
+                Lista.Items.Add(Aux.Codigo);
                 Aux = Aux.Anterior;
             }
 

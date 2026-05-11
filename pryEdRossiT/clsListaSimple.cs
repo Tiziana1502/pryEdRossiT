@@ -70,8 +70,6 @@ namespace pryEdRossiT
                     Aux = Aux.Siguiente;
                 }
                 Ant.Siguiente = Aux.Siguiente;
-
-
             }
         }
 

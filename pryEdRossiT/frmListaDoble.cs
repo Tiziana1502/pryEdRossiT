@@ -23,6 +23,7 @@ namespace pryEdRossiT
         {
            
             btnAgregar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
         private void ValidarDatos()
         {
@@ -101,23 +102,27 @@ namespace pryEdRossiT
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)        {
-            
-            if (ObjDoble.Primero != null)
-            {
-                Int32 x = Convert.ToInt32(cmbCodigo.Text);              
-                ObjDoble.Recorrer(dgvListaDoble);
-                ObjDoble.Recorrer("ListaDoble.csv");
-                ObjDoble.Recorrer(lstListaDoble);
-                ObjDoble.Recorrer(cmbCodigo);
-                ObjDoble.Eliminar(x);
 
-            }
-            else
+            if (cmbCodigo.SelectedIndex != -1) //verifico que se haya seleccionado un  codigo
             {
-                MessageBox.Show("La lista esta vacia", "Lista sin datos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ObjDoble.Primero != null)
+                {
+                    Int32 x = Convert.ToInt32(cmbCodigo.Text);
+                    ObjDoble.Eliminar(x);
+                    ObjDoble.Recorrer(dgvListaDoble);
+                    ObjDoble.Recorrer("ListaDoble.csv");
+                    ObjDoble.Recorrer(lstListaDoble);
+                    ObjDoble.Recorrer(cmbCodigo);
+
+                }
+                else
+                {
+                    MessageBox.Show("La lista esta vacia", "Lista sin datos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                btnEliminar.Enabled = false;
             }
-            btnEliminar.Enabled = false;
+            
         }
     }
 }

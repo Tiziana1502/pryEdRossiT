@@ -104,7 +104,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmColores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ingrese un color...";
+            this.Text = "Color";
             this.Load += new System.EventHandler(this.frmColores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
