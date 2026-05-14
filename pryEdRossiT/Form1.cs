@@ -82,5 +82,18 @@ namespace pryEdRossiT
             frmListaDoble ven = new frmListaDoble();
             ven.ShowDialog();
         }
+       
+
+        private void arbolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArbol ven = new frmArbol();  
+            ven.ShowDialog();   
+        }
+
+        private void grafoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGrafos ven = new frmGrafos();
+            ven.ShowDialog();
+        }
     }
 }
