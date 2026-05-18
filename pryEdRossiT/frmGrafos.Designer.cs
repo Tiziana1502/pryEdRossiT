@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.gbNuevo = new System.Windows.Forms.GroupBox();
+            this.cmbOrigen = new System.Windows.Forms.ComboBox();
+            this.cmbDestino = new System.Windows.Forms.ComboBox();
+            this.btnCargar = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblOrigen = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.lblDestino = new System.Windows.Forms.Label();
-            this.btnCargar = new System.Windows.Forms.Button();
             this.pbColas = new System.Windows.Forms.PictureBox();
-            this.cmbDestino = new System.Windows.Forms.ComboBox();
-            this.cmbOrigen = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblRdoPrecio = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -46,19 +47,20 @@
             this.lblPrecioCta = new System.Windows.Forms.Label();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.lblDestinoCta = new System.Windows.Forms.Label();
-            this.lblRdoPrecio = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnViajes = new System.Windows.Forms.Button();
+            this.btnOrigenes = new System.Windows.Forms.Button();
+            this.btnDestinos = new System.Windows.Forms.Button();
+            this.lblHasta = new System.Windows.Forms.Label();
+            this.cmbHasta = new System.Windows.Forms.ComboBox();
+            this.lblDesde = new System.Windows.Forms.Label();
+            this.cmbDesde = new System.Windows.Forms.ComboBox();
             this.dgvGrafos = new System.Windows.Forms.DataGridView();
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbDesde = new System.Windows.Forms.ComboBox();
-            this.lblDesde = new System.Windows.Forms.Label();
-            this.lblHasta = new System.Windows.Forms.Label();
-            this.cmbHasta = new System.Windows.Forms.ComboBox();
-            this.btnDestinos = new System.Windows.Forms.Button();
-            this.btnOrigenes = new System.Windows.Forms.Button();
-            this.btnViajes = new System.Windows.Forms.Button();
+            this.colSantaFe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbNuevo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbColas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -82,6 +84,33 @@
             this.gbNuevo.TabIndex = 4;
             this.gbNuevo.TabStop = false;
             this.gbNuevo.Text = "Carga de Datos:";
+            // 
+            // cmbOrigen
+            // 
+            this.cmbOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOrigen.FormattingEnabled = true;
+            this.cmbOrigen.Location = new System.Drawing.Point(67, 28);
+            this.cmbOrigen.Name = "cmbOrigen";
+            this.cmbOrigen.Size = new System.Drawing.Size(119, 21);
+            this.cmbOrigen.TabIndex = 9;
+            // 
+            // cmbDestino
+            // 
+            this.cmbDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDestino.FormattingEnabled = true;
+            this.cmbDestino.Location = new System.Drawing.Point(67, 60);
+            this.cmbDestino.Name = "cmbDestino";
+            this.cmbDestino.Size = new System.Drawing.Size(119, 21);
+            this.cmbDestino.TabIndex = 8;
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(106, 127);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(80, 27);
+            this.btnCargar.TabIndex = 7;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
             // 
             // txtPrecio
             // 
@@ -129,15 +158,6 @@
             this.lblDestino.TabIndex = 2;
             this.lblDestino.Text = "Destino:";
             // 
-            // btnCargar
-            // 
-            this.btnCargar.Location = new System.Drawing.Point(106, 127);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(80, 27);
-            this.btnCargar.TabIndex = 7;
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = true;
-            // 
             // pbColas
             // 
             this.pbColas.Image = global::pryEdRossiT.Properties.Resources.images;
@@ -147,24 +167,6 @@
             this.pbColas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbColas.TabIndex = 5;
             this.pbColas.TabStop = false;
-            // 
-            // cmbDestino
-            // 
-            this.cmbDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDestino.FormattingEnabled = true;
-            this.cmbDestino.Location = new System.Drawing.Point(67, 60);
-            this.cmbDestino.Name = "cmbDestino";
-            this.cmbDestino.Size = new System.Drawing.Size(119, 21);
-            this.cmbDestino.TabIndex = 8;
-            // 
-            // cmbOrigen
-            // 
-            this.cmbOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbOrigen.FormattingEnabled = true;
-            this.cmbOrigen.Location = new System.Drawing.Point(67, 28);
-            this.cmbOrigen.Name = "cmbOrigen";
-            this.cmbOrigen.Size = new System.Drawing.Size(119, 21);
-            this.cmbOrigen.TabIndex = 9;
             // 
             // groupBox1
             // 
@@ -182,6 +184,14 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta de Datos:";
+            // 
+            // lblRdoPrecio
+            // 
+            this.lblRdoPrecio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRdoPrecio.Location = new System.Drawing.Point(67, 92);
+            this.lblRdoPrecio.Name = "lblRdoPrecio";
+            this.lblRdoPrecio.Size = new System.Drawing.Size(119, 20);
+            this.lblRdoPrecio.TabIndex = 10;
             // 
             // comboBox1
             // 
@@ -249,14 +259,6 @@
             this.lblDestinoCta.TabIndex = 2;
             this.lblDestinoCta.Text = "Destino:";
             // 
-            // lblRdoPrecio
-            // 
-            this.lblRdoPrecio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblRdoPrecio.Location = new System.Drawing.Point(67, 92);
-            this.lblRdoPrecio.Name = "lblRdoPrecio";
-            this.lblRdoPrecio.Size = new System.Drawing.Size(119, 20);
-            this.lblRdoPrecio.TabIndex = 10;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnViajes);
@@ -274,62 +276,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listar Viajes";
             // 
-            // dgvGrafos
+            // btnViajes
             // 
-            this.dgvGrafos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrafos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCodigo,
-            this.colNombre,
-            this.colDeuda});
-            this.dgvGrafos.Location = new System.Drawing.Point(9, 61);
-            this.dgvGrafos.Name = "dgvGrafos";
-            this.dgvGrafos.RowHeadersVisible = false;
-            this.dgvGrafos.RowHeadersWidth = 51;
-            this.dgvGrafos.Size = new System.Drawing.Size(618, 127);
-            this.dgvGrafos.TabIndex = 8;
+            this.btnViajes.Location = new System.Drawing.Point(552, 19);
+            this.btnViajes.Name = "btnViajes";
+            this.btnViajes.Size = new System.Drawing.Size(86, 27);
+            this.btnViajes.TabIndex = 15;
+            this.btnViajes.Text = "Ver Viajes";
+            this.btnViajes.UseVisualStyleBackColor = true;
             // 
-            // colCodigo
+            // btnOrigenes
             // 
-            this.colCodigo.Frozen = true;
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.MinimumWidth = 6;
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.Width = 60;
+            this.btnOrigenes.Location = new System.Drawing.Point(460, 19);
+            this.btnOrigenes.Name = "btnOrigenes";
+            this.btnOrigenes.Size = new System.Drawing.Size(86, 27);
+            this.btnOrigenes.TabIndex = 14;
+            this.btnOrigenes.Text = "Listar Origenes";
+            this.btnOrigenes.UseVisualStyleBackColor = true;
             // 
-            // colNombre
+            // btnDestinos
             // 
-            this.colNombre.Frozen = true;
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.MinimumWidth = 6;
-            this.colNombre.Name = "colNombre";
-            this.colNombre.Width = 125;
-            // 
-            // colDeuda
-            // 
-            this.colDeuda.Frozen = true;
-            this.colDeuda.HeaderText = "Trámite";
-            this.colDeuda.MinimumWidth = 6;
-            this.colDeuda.Name = "colDeuda";
-            this.colDeuda.Width = 125;
-            // 
-            // cmbDesde
-            // 
-            this.cmbDesde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDesde.FormattingEnabled = true;
-            this.cmbDesde.Location = new System.Drawing.Point(57, 19);
-            this.cmbDesde.Name = "cmbDesde";
-            this.cmbDesde.Size = new System.Drawing.Size(119, 21);
-            this.cmbDesde.TabIndex = 11;
-            // 
-            // lblDesde
-            // 
-            this.lblDesde.AutoSize = true;
-            this.lblDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesde.Location = new System.Drawing.Point(6, 20);
-            this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(46, 15);
-            this.lblDesde.TabIndex = 10;
-            this.lblDesde.Text = "Desde:";
+            this.btnDestinos.Location = new System.Drawing.Point(182, 16);
+            this.btnDestinos.Name = "btnDestinos";
+            this.btnDestinos.Size = new System.Drawing.Size(86, 27);
+            this.btnDestinos.TabIndex = 10;
+            this.btnDestinos.Text = "Listar Destinos";
+            this.btnDestinos.UseVisualStyleBackColor = true;
             // 
             // lblHasta
             // 
@@ -350,32 +322,74 @@
             this.cmbHasta.Size = new System.Drawing.Size(119, 21);
             this.cmbHasta.TabIndex = 13;
             // 
-            // btnDestinos
+            // lblDesde
             // 
-            this.btnDestinos.Location = new System.Drawing.Point(182, 16);
-            this.btnDestinos.Name = "btnDestinos";
-            this.btnDestinos.Size = new System.Drawing.Size(86, 27);
-            this.btnDestinos.TabIndex = 10;
-            this.btnDestinos.Text = "Listar Destinos";
-            this.btnDestinos.UseVisualStyleBackColor = true;
+            this.lblDesde.AutoSize = true;
+            this.lblDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesde.Location = new System.Drawing.Point(6, 20);
+            this.lblDesde.Name = "lblDesde";
+            this.lblDesde.Size = new System.Drawing.Size(46, 15);
+            this.lblDesde.TabIndex = 10;
+            this.lblDesde.Text = "Desde:";
             // 
-            // btnOrigenes
+            // cmbDesde
             // 
-            this.btnOrigenes.Location = new System.Drawing.Point(460, 19);
-            this.btnOrigenes.Name = "btnOrigenes";
-            this.btnOrigenes.Size = new System.Drawing.Size(86, 27);
-            this.btnOrigenes.TabIndex = 14;
-            this.btnOrigenes.Text = "Listar Origenes";
-            this.btnOrigenes.UseVisualStyleBackColor = true;
+            this.cmbDesde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDesde.FormattingEnabled = true;
+            this.cmbDesde.Location = new System.Drawing.Point(57, 19);
+            this.cmbDesde.Name = "cmbDesde";
+            this.cmbDesde.Size = new System.Drawing.Size(119, 21);
+            this.cmbDesde.TabIndex = 11;
             // 
-            // btnViajes
+            // dgvGrafos
             // 
-            this.btnViajes.Location = new System.Drawing.Point(552, 19);
-            this.btnViajes.Name = "btnViajes";
-            this.btnViajes.Size = new System.Drawing.Size(86, 27);
-            this.btnViajes.TabIndex = 15;
-            this.btnViajes.Text = "Ver Viajes";
-            this.btnViajes.UseVisualStyleBackColor = true;
+            this.dgvGrafos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrafos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCodigo,
+            this.colNombre,
+            this.colDeuda,
+            this.colSantaFe,
+            this.colBS});
+            this.dgvGrafos.Location = new System.Drawing.Point(9, 61);
+            this.dgvGrafos.Name = "dgvGrafos";
+            this.dgvGrafos.RowHeadersVisible = false;
+            this.dgvGrafos.RowHeadersWidth = 51;
+            this.dgvGrafos.Size = new System.Drawing.Size(618, 127);
+            this.dgvGrafos.TabIndex = 8;
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.Frozen = true;
+            this.colCodigo.HeaderText = "Origen";
+            this.colCodigo.MinimumWidth = 6;
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.Width = 60;
+            // 
+            // colNombre
+            // 
+            this.colNombre.Frozen = true;
+            this.colNombre.HeaderText = "Córdoba";
+            this.colNombre.MinimumWidth = 6;
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Width = 125;
+            // 
+            // colDeuda
+            // 
+            this.colDeuda.Frozen = true;
+            this.colDeuda.HeaderText = "Mendoza";
+            this.colDeuda.MinimumWidth = 6;
+            this.colDeuda.Name = "colDeuda";
+            this.colDeuda.Width = 125;
+            // 
+            // colSantaFe
+            // 
+            this.colSantaFe.HeaderText = "Santa Fé";
+            this.colSantaFe.Name = "colSantaFe";
+            // 
+            // colBS
+            // 
+            this.colBS.HeaderText = "Buenos Aires";
+            this.colBS.Name = "colBS";
             // 
             // frmGrafos
             // 
@@ -388,7 +402,7 @@
             this.Controls.Add(this.gbNuevo);
             this.Name = "frmGrafos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Estructuras Ramificadas-Árbol binario";
+            this.Text = "Estructuras Ramificadas-Grafos";
             this.gbNuevo.ResumeLayout(false);
             this.gbNuevo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbColas)).EndInit();
@@ -434,5 +448,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeuda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSantaFe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBS;
     }
 }

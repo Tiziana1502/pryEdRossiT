@@ -45,6 +45,19 @@ namespace pryEdRossiT
             get { return Ant; } 
             set { Ant = value; }
         }
+        //Propiedades para trabajar con arbol binario, izquierdo recibe anterior y derecho toma el puntero siguiente
+        public clsNodo Derecho
+        {
+            get { return Sig; }
+            set { Sig = value; }
+        }
+
+        public clsNodo Izquierdo
+        {
+            get { return Ant; }
+            set { Ant = value; }
+        }
+
     }
 
 

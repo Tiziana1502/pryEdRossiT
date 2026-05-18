@@ -30,6 +30,11 @@
         {
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvArbol = new System.Windows.Forms.DataGridView();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rbPostOrden = new System.Windows.Forms.RadioButton();
             this.rbPreOrden = new System.Windows.Forms.RadioButton();
             this.rbInOrden = new System.Windows.Forms.RadioButton();
             this.gbEliminado = new System.Windows.Forms.GroupBox();
@@ -45,15 +50,10 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnEquilibrar = new System.Windows.Forms.Button();
-            this.rbPostOrden = new System.Windows.Forms.RadioButton();
-            this.dgvArbol = new System.Windows.Forms.DataGridView();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbol)).BeginInit();
             this.gbEliminado.SuspendLayout();
             this.gbNuevo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArbol)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
@@ -75,6 +75,56 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado del Árbol";
+            // 
+            // dgvArbol
+            // 
+            this.dgvArbol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArbol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCodigo,
+            this.colNombre,
+            this.colDeuda});
+            this.dgvArbol.Location = new System.Drawing.Point(204, 19);
+            this.dgvArbol.Name = "dgvArbol";
+            this.dgvArbol.RowHeadersVisible = false;
+            this.dgvArbol.RowHeadersWidth = 51;
+            this.dgvArbol.Size = new System.Drawing.Size(313, 158);
+            this.dgvArbol.TabIndex = 8;
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.Frozen = true;
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.MinimumWidth = 6;
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.Width = 60;
+            // 
+            // colNombre
+            // 
+            this.colNombre.Frozen = true;
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.MinimumWidth = 6;
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Width = 125;
+            // 
+            // colDeuda
+            // 
+            this.colDeuda.Frozen = true;
+            this.colDeuda.HeaderText = "Trámite";
+            this.colDeuda.MinimumWidth = 6;
+            this.colDeuda.Name = "colDeuda";
+            this.colDeuda.Width = 125;
+            // 
+            // rbPostOrden
+            // 
+            this.rbPostOrden.AutoSize = true;
+            this.rbPostOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPostOrden.Location = new System.Drawing.Point(34, 118);
+            this.rbPostOrden.Name = "rbPostOrden";
+            this.rbPostOrden.Size = new System.Drawing.Size(87, 19);
+            this.rbPostOrden.TabIndex = 2;
+            this.rbPostOrden.TabStop = true;
+            this.rbPostOrden.Text = "Post-Orden";
+            this.rbPostOrden.UseVisualStyleBackColor = true;
             // 
             // rbPreOrden
             // 
@@ -120,6 +170,7 @@
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(97, 21);
             this.cmbCodigo.TabIndex = 1;
+            this.cmbCodigo.SelectedIndexChanged += new System.EventHandler(this.cmbCodigo_SelectedIndexChanged);
             // 
             // lblCod
             // 
@@ -162,6 +213,7 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(85, 20);
             this.txtTramite.TabIndex = 5;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // lblCodigo
             // 
@@ -189,6 +241,8 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(62, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // txtNombre
             // 
@@ -196,6 +250,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(85, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // btnAgregar
             // 
@@ -205,6 +260,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblNombre
             // 
@@ -225,56 +281,6 @@
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
             // 
-            // rbPostOrden
-            // 
-            this.rbPostOrden.AutoSize = true;
-            this.rbPostOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPostOrden.Location = new System.Drawing.Point(34, 118);
-            this.rbPostOrden.Name = "rbPostOrden";
-            this.rbPostOrden.Size = new System.Drawing.Size(87, 19);
-            this.rbPostOrden.TabIndex = 2;
-            this.rbPostOrden.TabStop = true;
-            this.rbPostOrden.Text = "Post-Orden";
-            this.rbPostOrden.UseVisualStyleBackColor = true;
-            // 
-            // dgvArbol
-            // 
-            this.dgvArbol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArbol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCodigo,
-            this.colNombre,
-            this.colDeuda});
-            this.dgvArbol.Location = new System.Drawing.Point(204, 19);
-            this.dgvArbol.Name = "dgvArbol";
-            this.dgvArbol.RowHeadersVisible = false;
-            this.dgvArbol.RowHeadersWidth = 51;
-            this.dgvArbol.Size = new System.Drawing.Size(313, 158);
-            this.dgvArbol.TabIndex = 8;
-            // 
-            // colCodigo
-            // 
-            this.colCodigo.Frozen = true;
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.MinimumWidth = 6;
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.Width = 60;
-            // 
-            // colNombre
-            // 
-            this.colNombre.Frozen = true;
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.MinimumWidth = 6;
-            this.colNombre.Name = "colNombre";
-            this.colNombre.Width = 125;
-            // 
-            // colDeuda
-            // 
-            this.colDeuda.Frozen = true;
-            this.colDeuda.HeaderText = "Trámite";
-            this.colDeuda.MinimumWidth = 6;
-            this.colDeuda.Name = "colDeuda";
-            this.colDeuda.Width = 125;
-            // 
             // frmArbol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,11 +297,11 @@
             this.Load += new System.EventHandler(this.frmArbol_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbol)).EndInit();
             this.gbEliminado.ResumeLayout(false);
             this.gbEliminado.PerformLayout();
             this.gbNuevo.ResumeLayout(false);
             this.gbNuevo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArbol)).EndInit();
             this.ResumeLayout(false);
 
         }
