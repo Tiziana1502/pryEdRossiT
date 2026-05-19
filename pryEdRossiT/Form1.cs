@@ -95,5 +95,29 @@ namespace pryEdRossiT
             frmGrafos ven = new frmGrafos();
             ven.ShowDialog();
         }
+
+        private void consultaDeUnaTablaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBdConsultaTablas ven = new frmBdConsultaTablas();    
+            ven.ShowDialog();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmBdConsultaSql ven = new frmBdConsultaSql();
+            ven.ShowDialog();
+        }
+
+        private void operacionesEnBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBdOperaciones ven = new frmBdOperaciones();
+            ven.ShowDialog();
+        }
+
+        private void consultasVariasConOperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBdRepaso ven = new frmBdRepaso();
+            ven.ShowDialog();
+        }
     }
 }
