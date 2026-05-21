@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,16 +52,75 @@ namespace pryEdRossiT
             dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
             if (R.Derecho != null) InOrdenAsc(dgv, R.Derecho);
         }
-        public void Recorrer(ComboBox Lista)
+
+        //Sobrecarga recorrer publica para luego llamar del formulario
+        public void Recorrer(clsNodo[] vector)
         {
-            Lista.Items.Clear();
-            InOrdenAsc(Lista, Raiz);
+            int ind = 0; // Inicializamos el índice en 0
+            if (Raiz != null)
+            {
+                InOrdenAsc(vector, ref ind, Raiz);
+            }
         }
+
+        //Metodo recursivo InOrdenAsc para guardar en un vector
+        private void InOrdenAsc(clsNodo[] vec, ref int ind, clsNodo R)
+        {
+            // Primero recorremos la rama izquierda 
+            if (R.Izquierdo != null)
+            {
+                InOrdenAsc(vec, ref ind, R.Izquierdo);
+            }
+            // Agregamos el nodo actual en la posición que tiene el indice y lo incrementamos
+            vec[ind] = R;
+            ind++;
+            // Finalmente recorremos la rama derecha 
+            if (R.Derecho != null)
+            {
+                InOrdenAsc(vec, ref ind, R.Derecho);
+            }
+        }
+
+        //Procedimiento para mostrar en grilla PreOrden
+        private void PreOrden()
+        {
+
+        }
+
+        //Procedimiento para mostrar en grilla PostOrden
+        private void PostOrden()
+        { }
+       
+        //Sobrecarga para recorrer el combo box 
+        public void Recorrer(ComboBox Combo)
+        {
+            Combo.Items.Clear();
+            InOrdenAsc(Combo, Raiz);
+        }
+        
         private void InOrdenAsc(ComboBox lst, clsNodo R)
         {
             if (R.Izquierdo != null) InOrdenAsc(lst, R.Izquierdo);
             lst.Items.Add(R.Codigo);
             if (R.Derecho != null) InOrdenAsc(lst, R.Derecho);
+        }
+
+        //Recorrido para mostrar en un tree view
+        public void Recorrer(TreeView tree)
+        {
+            tree.Nodes.Clear();
+            TreeNode nodoPadre = new TreeNode("Árbol");
+            tree.Nodes.Add(nodoPadre);
+            PreOrden(Raiz, nodoPadre);
+            tree.ExpandAll();
+        }
+
+        private void PreOrden(clsNodo R, TreeNode nodoTreeView)
+        { 
+            TreeNode nodoPadre = new TreeNode(R.Codigo.ToString());
+            nodoTreeView.Nodes.Add(nodoPadre);
+            if (R.Izquierdo != null) PreOrden(R.Izquierdo, nodoPadre);
+            if(R.Derecho != null) PreOrden(R.Derecho, nodoPadre);
         }
     }   
 }

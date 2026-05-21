@@ -46,7 +46,15 @@ namespace pryEdRossiT
             objArbol.Agregar(x);
             objArbol.Recorrer(dgvArbol);
             //Esto no es necesario pero se realiza para ver si funciona el programa y el método
-            objArbol.Recorrer(cmbCodigo);            
+            objArbol.Recorrer(cmbCodigo);
+            objArbol.Recorrer(trvArbolBinario);
+
+            // Determinamos el tamaño del vector basándonos en la cantidad de filas de la grilla
+            int cantidadNodos = dgvArbol.Rows.Count;
+            // Creamos el vector del tamaño exacto
+            clsNodo[] vectorDeNodos = new clsNodo[cantidadNodos];
+            // Llamamos a tu nueva sobrecarga
+            objArbol.Recorrer(vectorDeNodos);
 
             //Limpio los controles
             txtCodigo.Text = "";
@@ -88,6 +96,13 @@ namespace pryEdRossiT
         private void txtTramite_TextChanged(object sender, EventArgs e)
         {
             ValidarDatos();
+        }
+
+        private void rbInOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            clsNodo x = new clsNodo();
+            objArbol.Recorrer(dgvArbol);            
+            objArbol.Recorrer(cmbCodigo);
         }
     }
 }

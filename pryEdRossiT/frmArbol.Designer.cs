@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.trvArbolBinario = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvArbol = new System.Windows.Forms.DataGridView();
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,12 +56,12 @@
             this.gbNuevo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // treeView1
+            // trvArbolBinario
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 12);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(169, 176);
-            this.treeView1.TabIndex = 0;
+            this.trvArbolBinario.Location = new System.Drawing.Point(12, 12);
+            this.trvArbolBinario.Name = "trvArbolBinario";
+            this.trvArbolBinario.Size = new System.Drawing.Size(169, 176);
+            this.trvArbolBinario.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -149,6 +149,7 @@
             this.rbInOrden.TabStop = true;
             this.rbInOrden.Text = "In-Orden";
             this.rbInOrden.UseVisualStyleBackColor = true;
+            this.rbInOrden.CheckedChanged += new System.EventHandler(this.rbInOrden_CheckedChanged);
             // 
             // gbEliminado
             // 
@@ -290,7 +291,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbEliminado);
             this.Controls.Add(this.gbNuevo);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.trvArbolBinario);
             this.Name = "frmArbol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructuras Ramificadas-Árbol binario";
@@ -308,7 +309,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView trvArbolBinario;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbPreOrden;
         private System.Windows.Forms.RadioButton rbInOrden;
