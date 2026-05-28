@@ -56,11 +56,6 @@
             this.lblDesde = new System.Windows.Forms.Label();
             this.cmbDesde = new System.Windows.Forms.ComboBox();
             this.dgvGrafos = new System.Windows.Forms.DataGridView();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSantaFe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbNuevo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbColas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -78,11 +73,9 @@
             this.gbNuevo.Controls.Add(this.lblPrecio);
             this.gbNuevo.Controls.Add(this.btnBorrar);
             this.gbNuevo.Controls.Add(this.lblDestino);
-            this.gbNuevo.Location = new System.Drawing.Point(357, 15);
-            this.gbNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbNuevo.Location = new System.Drawing.Point(268, 12);
             this.gbNuevo.Name = "gbNuevo";
-            this.gbNuevo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbNuevo.Size = new System.Drawing.Size(259, 197);
+            this.gbNuevo.Size = new System.Drawing.Size(194, 160);
             this.gbNuevo.TabIndex = 0;
             this.gbNuevo.TabStop = false;
             this.gbNuevo.Text = "Carga de Datos:";
@@ -91,39 +84,35 @@
             // 
             this.cmbOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOrigen.FormattingEnabled = true;
-            this.cmbOrigen.Location = new System.Drawing.Point(89, 34);
-            this.cmbOrigen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbOrigen.Location = new System.Drawing.Point(67, 28);
             this.cmbOrigen.Name = "cmbOrigen";
-            this.cmbOrigen.Size = new System.Drawing.Size(157, 24);
+            this.cmbOrigen.Size = new System.Drawing.Size(119, 21);
             this.cmbOrigen.TabIndex = 1;
-          
             // 
             // cmbDestino
             // 
             this.cmbDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDestino.FormattingEnabled = true;
-            this.cmbDestino.Location = new System.Drawing.Point(89, 74);
-            this.cmbDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDestino.Location = new System.Drawing.Point(67, 60);
             this.cmbDestino.Name = "cmbDestino";
-            this.cmbDestino.Size = new System.Drawing.Size(157, 24);
+            this.cmbDestino.Size = new System.Drawing.Size(119, 21);
             this.cmbDestino.TabIndex = 3;
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(141, 156);
-            this.btnCargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCargar.Location = new System.Drawing.Point(106, 127);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(107, 33);
+            this.btnCargar.Size = new System.Drawing.Size(80, 27);
             this.btnCargar.TabIndex = 7;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(89, 113);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecio.Location = new System.Drawing.Point(67, 92);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(157, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(119, 20);
             this.txtPrecio.TabIndex = 5;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
@@ -131,10 +120,9 @@
             // 
             this.lblOrigen.AutoSize = true;
             this.lblOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrigen.Location = new System.Drawing.Point(12, 34);
-            this.lblOrigen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOrigen.Location = new System.Drawing.Point(9, 28);
             this.lblOrigen.Name = "lblOrigen";
-            this.lblOrigen.Size = new System.Drawing.Size(56, 18);
+            this.lblOrigen.Size = new System.Drawing.Size(47, 15);
             this.lblOrigen.TabIndex = 0;
             this.lblOrigen.Text = "Origen:";
             // 
@@ -142,41 +130,38 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(15, 114);
-            this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecio.Location = new System.Drawing.Point(11, 93);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(55, 18);
+            this.lblPrecio.Size = new System.Drawing.Size(45, 15);
             this.lblPrecio.TabIndex = 4;
             this.lblPrecio.Text = "Precio:";
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(16, 156);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrar.Location = new System.Drawing.Point(12, 127);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(107, 33);
+            this.btnBorrar.Size = new System.Drawing.Size(80, 27);
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "Borrar Todo";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
             this.lblDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDestino.Location = new System.Drawing.Point(12, 75);
-            this.lblDestino.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDestino.Location = new System.Drawing.Point(9, 61);
             this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(63, 18);
+            this.lblDestino.Size = new System.Drawing.Size(52, 15);
             this.lblDestino.TabIndex = 2;
             this.lblDestino.Text = "Destino:";
             // 
             // pbColas
             // 
             this.pbColas.Image = global::pryEdRossiT.Properties.Resources.images;
-            this.pbColas.Location = new System.Drawing.Point(16, 15);
-            this.pbColas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbColas.Location = new System.Drawing.Point(12, 12);
             this.pbColas.Name = "pbColas";
-            this.pbColas.Size = new System.Drawing.Size(319, 197);
+            this.pbColas.Size = new System.Drawing.Size(239, 160);
             this.pbColas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbColas.TabIndex = 5;
             this.pbColas.TabStop = false;
@@ -191,11 +176,9 @@
             this.groupBox1.Controls.Add(this.lblPrecioCta);
             this.groupBox1.Controls.Add(this.btnConsulta);
             this.groupBox1.Controls.Add(this.lblDestinoCta);
-            this.groupBox1.Location = new System.Drawing.Point(624, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(468, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(259, 197);
+            this.groupBox1.Size = new System.Drawing.Size(194, 160);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta de Datos:";
@@ -203,50 +186,46 @@
             // lblRdoPrecio
             // 
             this.lblRdoPrecio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblRdoPrecio.Location = new System.Drawing.Point(89, 113);
-            this.lblRdoPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRdoPrecio.Location = new System.Drawing.Point(67, 92);
             this.lblRdoPrecio.Name = "lblRdoPrecio";
-            this.lblRdoPrecio.Size = new System.Drawing.Size(159, 25);
+            this.lblRdoPrecio.Size = new System.Drawing.Size(119, 20);
             this.lblRdoPrecio.TabIndex = 5;
             // 
             // cmbOrigenCta
             // 
             this.cmbOrigenCta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOrigenCta.FormattingEnabled = true;
-            this.cmbOrigenCta.Location = new System.Drawing.Point(89, 34);
-            this.cmbOrigenCta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbOrigenCta.Location = new System.Drawing.Point(67, 28);
             this.cmbOrigenCta.Name = "cmbOrigenCta";
-            this.cmbOrigenCta.Size = new System.Drawing.Size(157, 24);
+            this.cmbOrigenCta.Size = new System.Drawing.Size(119, 21);
             this.cmbOrigenCta.TabIndex = 1;
             // 
             // cmbDestinoCta
             // 
             this.cmbDestinoCta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDestinoCta.FormattingEnabled = true;
-            this.cmbDestinoCta.Location = new System.Drawing.Point(89, 74);
-            this.cmbDestinoCta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDestinoCta.Location = new System.Drawing.Point(67, 60);
             this.cmbDestinoCta.Name = "cmbDestinoCta";
-            this.cmbDestinoCta.Size = new System.Drawing.Size(157, 24);
+            this.cmbDestinoCta.Size = new System.Drawing.Size(119, 21);
             this.cmbDestinoCta.TabIndex = 3;
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(141, 156);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiar.Location = new System.Drawing.Point(106, 127);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(107, 33);
+            this.btnLimpiar.Size = new System.Drawing.Size(80, 27);
             this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.Text = "Borrar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // lblOrigenCta
             // 
             this.lblOrigenCta.AutoSize = true;
             this.lblOrigenCta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrigenCta.Location = new System.Drawing.Point(12, 34);
-            this.lblOrigenCta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOrigenCta.Location = new System.Drawing.Point(9, 28);
             this.lblOrigenCta.Name = "lblOrigenCta";
-            this.lblOrigenCta.Size = new System.Drawing.Size(56, 18);
+            this.lblOrigenCta.Size = new System.Drawing.Size(47, 15);
             this.lblOrigenCta.TabIndex = 0;
             this.lblOrigenCta.Text = "Origen:";
             // 
@@ -254,31 +233,29 @@
             // 
             this.lblPrecioCta.AutoSize = true;
             this.lblPrecioCta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioCta.Location = new System.Drawing.Point(15, 114);
-            this.lblPrecioCta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecioCta.Location = new System.Drawing.Point(11, 93);
             this.lblPrecioCta.Name = "lblPrecioCta";
-            this.lblPrecioCta.Size = new System.Drawing.Size(55, 18);
+            this.lblPrecioCta.Size = new System.Drawing.Size(45, 15);
             this.lblPrecioCta.TabIndex = 4;
             this.lblPrecioCta.Text = "Precio:";
             // 
             // btnConsulta
             // 
-            this.btnConsulta.Location = new System.Drawing.Point(16, 156);
-            this.btnConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsulta.Location = new System.Drawing.Point(12, 127);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(107, 33);
+            this.btnConsulta.Size = new System.Drawing.Size(80, 27);
             this.btnConsulta.TabIndex = 6;
             this.btnConsulta.Text = "Consultar";
             this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // lblDestinoCta
             // 
             this.lblDestinoCta.AutoSize = true;
             this.lblDestinoCta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDestinoCta.Location = new System.Drawing.Point(12, 75);
-            this.lblDestinoCta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDestinoCta.Location = new System.Drawing.Point(9, 61);
             this.lblDestinoCta.Name = "lblDestinoCta";
-            this.lblDestinoCta.Size = new System.Drawing.Size(63, 18);
+            this.lblDestinoCta.Size = new System.Drawing.Size(52, 15);
             this.lblDestinoCta.TabIndex = 2;
             this.lblDestinoCta.Text = "Destino:";
             // 
@@ -292,53 +269,50 @@
             this.groupBox2.Controls.Add(this.lblDesde);
             this.groupBox2.Controls.Add(this.cmbDesde);
             this.groupBox2.Controls.Add(this.dgvGrafos);
-            this.groupBox2.Location = new System.Drawing.Point(19, 233);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(14, 189);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(864, 256);
+            this.groupBox2.Size = new System.Drawing.Size(648, 208);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listar Viajes";
             // 
             // btnViajes
             // 
-            this.btnViajes.Location = new System.Drawing.Point(736, 23);
-            this.btnViajes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViajes.Location = new System.Drawing.Point(552, 19);
             this.btnViajes.Name = "btnViajes";
-            this.btnViajes.Size = new System.Drawing.Size(115, 33);
+            this.btnViajes.Size = new System.Drawing.Size(86, 27);
             this.btnViajes.TabIndex = 6;
             this.btnViajes.Text = "Ver Viajes";
             this.btnViajes.UseVisualStyleBackColor = true;
+            this.btnViajes.Click += new System.EventHandler(this.btnViajes_Click);
             // 
             // btnOrigenes
             // 
-            this.btnOrigenes.Location = new System.Drawing.Point(613, 23);
-            this.btnOrigenes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrigenes.Location = new System.Drawing.Point(460, 19);
             this.btnOrigenes.Name = "btnOrigenes";
-            this.btnOrigenes.Size = new System.Drawing.Size(115, 33);
+            this.btnOrigenes.Size = new System.Drawing.Size(86, 27);
             this.btnOrigenes.TabIndex = 5;
             this.btnOrigenes.Text = "Listar Origenes";
             this.btnOrigenes.UseVisualStyleBackColor = true;
+            this.btnOrigenes.Click += new System.EventHandler(this.btnOrigenes_Click);
             // 
             // btnDestinos
             // 
-            this.btnDestinos.Location = new System.Drawing.Point(243, 20);
-            this.btnDestinos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDestinos.Location = new System.Drawing.Point(182, 16);
             this.btnDestinos.Name = "btnDestinos";
-            this.btnDestinos.Size = new System.Drawing.Size(115, 33);
+            this.btnDestinos.Size = new System.Drawing.Size(86, 27);
             this.btnDestinos.TabIndex = 2;
             this.btnDestinos.Text = "Listar Destinos";
             this.btnDestinos.UseVisualStyleBackColor = true;
+            this.btnDestinos.Click += new System.EventHandler(this.btnDestinos_Click);
             // 
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
             this.lblHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHasta.Location = new System.Drawing.Point(375, 26);
-            this.lblHasta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHasta.Location = new System.Drawing.Point(281, 21);
             this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(51, 18);
+            this.lblHasta.Size = new System.Drawing.Size(42, 15);
             this.lblHasta.TabIndex = 3;
             this.lblHasta.Text = "Hasta:";
             // 
@@ -346,20 +320,18 @@
             // 
             this.cmbHasta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHasta.FormattingEnabled = true;
-            this.cmbHasta.Location = new System.Drawing.Point(439, 25);
-            this.cmbHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbHasta.Location = new System.Drawing.Point(329, 20);
             this.cmbHasta.Name = "cmbHasta";
-            this.cmbHasta.Size = new System.Drawing.Size(157, 24);
+            this.cmbHasta.Size = new System.Drawing.Size(119, 21);
             this.cmbHasta.TabIndex = 4;
             // 
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
             this.lblDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesde.Location = new System.Drawing.Point(8, 25);
-            this.lblDesde.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDesde.Location = new System.Drawing.Point(6, 20);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(55, 18);
+            this.lblDesde.Size = new System.Drawing.Size(46, 15);
             this.lblDesde.TabIndex = 0;
             this.lblDesde.Text = "Desde:";
             // 
@@ -367,77 +339,30 @@
             // 
             this.cmbDesde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDesde.FormattingEnabled = true;
-            this.cmbDesde.Location = new System.Drawing.Point(76, 23);
-            this.cmbDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDesde.Location = new System.Drawing.Point(57, 19);
             this.cmbDesde.Name = "cmbDesde";
-            this.cmbDesde.Size = new System.Drawing.Size(157, 24);
+            this.cmbDesde.Size = new System.Drawing.Size(119, 21);
             this.cmbDesde.TabIndex = 1;
             // 
             // dgvGrafos
             // 
             this.dgvGrafos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrafos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCodigo,
-            this.colNombre,
-            this.colDeuda,
-            this.colSantaFe,
-            this.colBS});
-            this.dgvGrafos.Location = new System.Drawing.Point(12, 75);
-            this.dgvGrafos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGrafos.Location = new System.Drawing.Point(9, 61);
             this.dgvGrafos.Name = "dgvGrafos";
             this.dgvGrafos.RowHeadersVisible = false;
             this.dgvGrafos.RowHeadersWidth = 51;
-            this.dgvGrafos.Size = new System.Drawing.Size(824, 156);
+            this.dgvGrafos.Size = new System.Drawing.Size(618, 127);
             this.dgvGrafos.TabIndex = 7;
-            // 
-            // colCodigo
-            // 
-            this.colCodigo.Frozen = true;
-            this.colCodigo.HeaderText = "Origen";
-            this.colCodigo.MinimumWidth = 6;
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.Width = 60;
-            // 
-            // colNombre
-            // 
-            this.colNombre.Frozen = true;
-            this.colNombre.HeaderText = "Córdoba";
-            this.colNombre.MinimumWidth = 6;
-            this.colNombre.Name = "colNombre";
-            this.colNombre.Width = 125;
-            // 
-            // colDeuda
-            // 
-            this.colDeuda.Frozen = true;
-            this.colDeuda.HeaderText = "Mendoza";
-            this.colDeuda.MinimumWidth = 6;
-            this.colDeuda.Name = "colDeuda";
-            this.colDeuda.Width = 125;
-            // 
-            // colSantaFe
-            // 
-            this.colSantaFe.HeaderText = "Santa Fé";
-            this.colSantaFe.MinimumWidth = 6;
-            this.colSantaFe.Name = "colSantaFe";
-            this.colSantaFe.Width = 125;
-            // 
-            // colBS
-            // 
-            this.colBS.HeaderText = "Buenos Aires";
-            this.colBS.MinimumWidth = 6;
-            this.colBS.Name = "colBS";
-            this.colBS.Width = 125;
             // 
             // frmGrafos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 503);
+            this.ClientSize = new System.Drawing.Size(679, 409);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pbColas);
             this.Controls.Add(this.gbNuevo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmGrafos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructuras Ramificadas-Grafos";
@@ -484,10 +409,5 @@
         private System.Windows.Forms.Label lblDesde;
         private System.Windows.Forms.ComboBox cmbDesde;
         private System.Windows.Forms.DataGridView dgvGrafos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDeuda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSantaFe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBS;
     }
 }
