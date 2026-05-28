@@ -49,11 +49,9 @@ namespace pryEdRossiT
             objArbol.Recorrer(cmbCodigo);
             objArbol.Recorrer(trvArbolBinario);
 
-            // Determinamos el tamaño del vector basándonos en la cantidad de filas de la grilla
-            int cantidadNodos = dgvArbol.Rows.Count;
-            // Creamos el vector del tamaño exacto
-            clsNodo[] vectorDeNodos = new clsNodo[cantidadNodos];
-            // Llamamos a tu nueva sobrecarga
+            //Recorrer vector y guardar los datos 
+            int cantidadNodos = dgvArbol.Rows.Count;            
+            clsNodo[] vectorDeNodos = new clsNodo[cantidadNodos];            
             objArbol.Recorrer(vectorDeNodos);
 
             //Limpio los controles
@@ -101,8 +99,19 @@ namespace pryEdRossiT
         private void rbInOrden_CheckedChanged(object sender, EventArgs e)
         {
             clsNodo x = new clsNodo();
-            objArbol.Recorrer(dgvArbol);            
-            objArbol.Recorrer(cmbCodigo);
+            if (rbInOrden.Checked) objArbol.Recorrer(dgvArbol);            
+        }
+
+        private void rbPreOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            clsNodo x = new clsNodo();
+            if (rbPreOrden.Checked) objArbol.RecorrerPreOrden(dgvArbol);          
+        }
+
+        private void rbPostOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            clsNodo x = new clsNodo();
+            if (rbPostOrden.Checked) objArbol.RecorrerPostOrden(dgvArbol);
         }
     }
 }

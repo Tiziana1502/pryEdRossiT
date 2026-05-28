@@ -42,18 +42,19 @@ namespace pryEdRossiT
         }
         public void Recorrer(DataGridView Grilla)
         { 
-            Grilla.Rows.Clear();
+            Grilla.Rows.Clear();            
             InOrdenAsc(Grilla, Raiz);
+        
         }
 
         private void InOrdenAsc(DataGridView dgv, clsNodo R)
         {
-            if (R.Izquierdo != null) InOrdenAsc(dgv, R.Izquierdo);
+            if (R.Izquierdo != null) InOrdenAsc(dgv, R.Izquierdo); //El reocrrido es izquierda, raíz, derecha
             dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
             if (R.Derecho != null) InOrdenAsc(dgv, R.Derecho);
         }
 
-        //Sobrecarga recorrer publica para luego llamar del formulario
+        //Sobrecarga recorrer para cargar vector
         public void Recorrer(clsNodo[] vector)
         {
             int ind = 0; // Inicializamos el índice en 0
@@ -65,31 +66,49 @@ namespace pryEdRossiT
 
         //Metodo recursivo InOrdenAsc para guardar en un vector
         private void InOrdenAsc(clsNodo[] vec, ref int ind, clsNodo R)
-        {
-            // Primero recorremos la rama izquierda 
-            if (R.Izquierdo != null)
-            {
-                InOrdenAsc(vec, ref ind, R.Izquierdo);
-            }
-            // Agregamos el nodo actual en la posición que tiene el indice y lo incrementamos
+        {            
+            if (R.Izquierdo != null) InOrdenAsc(vec, ref ind, R.Izquierdo);       
             vec[ind] = R;
-            ind++;
-            // Finalmente recorremos la rama derecha 
-            if (R.Derecho != null)
-            {
-                InOrdenAsc(vec, ref ind, R.Derecho);
-            }
+            ind++;           
+            if (R.Derecho != null) InOrdenAsc(vec, ref ind, R.Derecho);
+        
+        }
+
+        //Recorrer PreOrden
+        public void RecorrerPreOrden(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PreOrden(Grilla, Raiz);
         }
 
         //Procedimiento para mostrar en grilla PreOrden
-        private void PreOrden()
-        {
+        private void PreOrden(DataGridView grilla, clsNodo R)
+        {           
+            if(R != null) //Recorrido es raíz, izquierda y derecha
+            {                
+                grilla.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+                PreOrden(grilla, R.Izquierdo);
+                PreOrden(grilla, R.Derecho);
+            }
+        }
 
+        //Recorrer PostOrden
+        public void RecorrerPostOrden(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PostOrden(Grilla, Raiz);
         }
 
         //Procedimiento para mostrar en grilla PostOrden
-        private void PostOrden()
-        { }
+        private void PostOrden(DataGridView grilla, clsNodo R)
+        {
+            if (R != null) //Recorrido es izquierda, derecha y raíz
+            {
+                PostOrden(grilla, R.Izquierdo);
+                PostOrden(grilla, R.Derecho);
+                grilla.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+            }
+        }
        
         //Sobrecarga para recorrer el combo box 
         public void Recorrer(ComboBox Combo)
@@ -97,6 +116,7 @@ namespace pryEdRossiT
             Combo.Items.Clear();
             InOrdenAsc(Combo, Raiz);
         }
+
         
         private void InOrdenAsc(ComboBox lst, clsNodo R)
         {
