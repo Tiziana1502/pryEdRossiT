@@ -28,6 +28,12 @@ namespace pryEdRossiT
             objGrafo.MostrarCiudades(cmbHasta);
             objGrafo.MostrarCiudades(cmbOrigenCta);
             objGrafo.MostrarCiudades(cmbDestinoCta);
+
+            btnConsulta.Enabled = false;
+            btnLimpiar.Enabled = false;
+            btnDestinos.Enabled = false;
+            btnOrigenes.Enabled = false;
+            btnViajes.Enabled = false;
         }
 
         private void Limpiar()
@@ -39,22 +45,31 @@ namespace pryEdRossiT
 
         private void ValidarDatos()
         {
-            if (cmbOrigen.Text != "" && cmbOrigenCta.Text != "" && 
-                cmbDestino.Text != "" && cmbDestinoCta.Text != "" && txtPrecio.Text != "")
+            if (cmbOrigen.Text != "" && cmbDestino.Text != "" && txtPrecio.Text != "")              
             {
-                btnCargar.Enabled = true;
-                btnConsulta.Enabled=true;
-                btnBorrar.Enabled = true;
+                btnCargar.Enabled = true;              
+                btnBorrar.Enabled = true;               
+            }
+            else
+            {
+                btnCargar.Enabled = false;           
+                btnBorrar.Enabled = false;             
+            }
+        }
+        private void Validacion()
+        {
+            if (cmbOrigenCta.Text != "" && cmbDestinoCta.Text != "")
+            {
+                btnConsulta.Enabled = true;
                 btnLimpiar.Enabled = true;
             }
             else
             {
-                btnCargar.Enabled = false;
-                btnConsulta.Enabled = true;
-                btnBorrar.Enabled = false;
+                btnConsulta.Enabled = false;
                 btnLimpiar.Enabled = false;
             }
         }
+
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Solo permite números (char.IsDigit) y la tecla de borrar (char.IsControl)
@@ -76,6 +91,7 @@ namespace pryEdRossiT
            objGrafo.Eliminar(f, c);
            cmbOrigenCta.SelectedIndex = -1;
            cmbDestinoCta.SelectedIndex = -1;
+           lblRdoPrecio.Text = "";
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -110,6 +126,52 @@ namespace pryEdRossiT
         private void btnViajes_Click(object sender, EventArgs e)
         {
             objGrafo.MostrarTodo(dgvGrafos);
+        }
+
+        private void cmbOrigen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void cmbDestino_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void cmbOrigenCta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Validacion();
+        }
+
+        private void cmbDestinoCta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Validacion();
+        }
+
+        private void cmbDesde_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDesde.SelectedIndex != -1) btnDestinos.Enabled = true;
+            else btnDestinos.Enabled = false;
+            
+        }
+
+        private void cmbHasta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbHasta.SelectedIndex != -1)
+            {
+                btnOrigenes.Enabled = true;
+                btnViajes.Enabled = true;
+            }
+            else
+            {
+                btnOrigenes.Enabled = false;
+                btnOrigenes.Enabled = false;
+            }
         }
     }
 }
