@@ -16,5 +16,11 @@ namespace pryEdRossiT
         {
             InitializeComponent();
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            clsBaseDatos sql = new clsBaseDatos();
+            sql.Listar(dgvCtaSql, txtSQL.Text);
+        }
     }
 }
