@@ -123,6 +123,7 @@
             this.btnConvolucion.TabIndex = 10;
             this.btnConvolucion.Text = "Selección por convolución";
             this.btnConvolucion.UseVisualStyleBackColor = true;
+            this.btnConvolucion.Click += new System.EventHandler(this.btnConvolucion_Click);
             // 
             // btnSelMultiAtributo
             // 
@@ -133,6 +134,7 @@
             this.btnSelMultiAtributo.TabIndex = 9;
             this.btnSelMultiAtributo.Text = "Selección Multiatributo";
             this.btnSelMultiAtributo.UseVisualStyleBackColor = true;
+            this.btnSelMultiAtributo.Click += new System.EventHandler(this.btnSelMultiAtributo_Click);
             // 
             // btnSelSimple
             // 
@@ -143,6 +145,7 @@
             this.btnSelSimple.TabIndex = 6;
             this.btnSelSimple.Text = "Selección Simple";
             this.btnSelSimple.UseVisualStyleBackColor = true;
+            this.btnSelSimple.Click += new System.EventHandler(this.btnSelSimple_Click);
             // 
             // groupBox2
             // 
@@ -165,6 +168,7 @@
             this.btnDiferencia.TabIndex = 10;
             this.btnDiferencia.Text = "Diferencia";
             this.btnDiferencia.UseVisualStyleBackColor = true;
+            this.btnDiferencia.Click += new System.EventHandler(this.btnDiferencia_Click);
             // 
             // btnInterseccion
             // 
@@ -175,6 +179,7 @@
             this.btnInterseccion.TabIndex = 9;
             this.btnInterseccion.Text = "Intersección";
             this.btnInterseccion.UseVisualStyleBackColor = true;
+            this.btnInterseccion.Click += new System.EventHandler(this.btnInterseccion_Click);
             // 
             // btnUnion
             // 
@@ -185,6 +190,7 @@
             this.btnUnion.TabIndex = 6;
             this.btnUnion.Text = "Unión";
             this.btnUnion.UseVisualStyleBackColor = true;
+            this.btnUnion.Click += new System.EventHandler(this.btnUnion_Click);
             // 
             // frmBdOperaciones
             // 
