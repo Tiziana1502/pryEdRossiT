@@ -22,5 +22,16 @@ namespace pryEdRossiT
             clsBaseDatos bd = new clsBaseDatos();
             bd.Listar(cmbTabla.Text, dgvTablaCta);
         }
+
+        private void frmBdConsultaTablas_Load(object sender, EventArgs e)
+        {
+            btnListar.Enabled = false;
+        }
+
+        private void cmbTabla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTabla.SelectedIndex != -1) btnListar.Enabled = true;
+            else btnListar.Enabled = false;
+        }
     }
 }

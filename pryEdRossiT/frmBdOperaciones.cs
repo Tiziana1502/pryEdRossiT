@@ -44,12 +44,19 @@ namespace pryEdRossiT
 
         private void btnSelSimple_Click(object sender, EventArgs e)
         {
-
+            String varSql = "SELECT TITULO " +
+                "FROM LIBRO " +
+                "WHERE  IDPAIS = 3 ";
+            sql.Listar(varSql, dgvOperaciones);
         }
 
         private void btnSelMultiAtributo_Click(object sender, EventArgs e)
         {
-
+            String varSql = "SELECT TITULO, PRECIO " +
+                "FROM LIBRO " +
+                "WHERE PRECIO > 400 " +
+                "ORDER BY 1 DESC";
+            sql.Listar(varSql, dgvOperaciones);
         }
 
         private void btnConvolucion_Click(object sender, EventArgs e)
@@ -91,5 +98,7 @@ namespace pryEdRossiT
                 " ORDER BY 1 ASC";            
             sql.Listar(varSql, dgvOperaciones);
         }
+
+     
     }
 }

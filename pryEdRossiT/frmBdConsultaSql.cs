@@ -22,5 +22,16 @@ namespace pryEdRossiT
             clsBaseDatos sql = new clsBaseDatos();
             sql.Listar(dgvCtaSql, txtSQL.Text);
         }
+
+        private void frmBdConsultaSql_Load(object sender, EventArgs e)
+        {
+            btnListar.Enabled = false;
+        }
+
+        private void txtSQL_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSQL.Text != "") btnListar.Enabled = true;
+            else btnListar.Enabled = false;
+        }
     }
 }

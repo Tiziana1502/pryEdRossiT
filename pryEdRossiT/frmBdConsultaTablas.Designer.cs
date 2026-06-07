@@ -61,6 +61,7 @@
             this.cmbTabla.Name = "cmbTabla";
             this.cmbTabla.Size = new System.Drawing.Size(193, 28);
             this.cmbTabla.TabIndex = 10;
+            this.cmbTabla.SelectedIndexChanged += new System.EventHandler(this.cmbTabla_SelectedIndexChanged);
             // 
             // lblTitulo
             // 
@@ -98,6 +99,7 @@
             this.Name = "frmBdConsultaTablas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de una tabla";
+            this.Load += new System.EventHandler(this.frmBdConsultaTablas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaCta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

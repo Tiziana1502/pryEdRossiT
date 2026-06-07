@@ -38,38 +38,42 @@
             // dgvCtaSql
             // 
             this.dgvCtaSql.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCtaSql.Location = new System.Drawing.Point(10, 231);
+            this.dgvCtaSql.Location = new System.Drawing.Point(13, 284);
+            this.dgvCtaSql.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCtaSql.Name = "dgvCtaSql";
             this.dgvCtaSql.RowHeadersVisible = false;
             this.dgvCtaSql.RowHeadersWidth = 51;
-            this.dgvCtaSql.Size = new System.Drawing.Size(612, 194);
+            this.dgvCtaSql.Size = new System.Drawing.Size(816, 239);
             this.dgvCtaSql.TabIndex = 11;
             // 
             // txtSQL
             // 
-            this.txtSQL.Location = new System.Drawing.Point(10, 48);
-            this.txtSQL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSQL.Location = new System.Drawing.Point(13, 59);
+            this.txtSQL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSQL.Multiline = true;
             this.txtSQL.Name = "txtSQL";
-            this.txtSQL.Size = new System.Drawing.Size(613, 137);
+            this.txtSQL.Size = new System.Drawing.Size(816, 168);
             this.txtSQL.TabIndex = 16;
+            this.txtSQL.TextChanged += new System.EventHandler(this.txtSQL_TextChanged);
             // 
             // lblConsulta
             // 
             this.lblConsulta.AutoSize = true;
             this.lblConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsulta.Location = new System.Drawing.Point(10, 22);
+            this.lblConsulta.Location = new System.Drawing.Point(13, 27);
+            this.lblConsulta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblConsulta.Name = "lblConsulta";
-            this.lblConsulta.Size = new System.Drawing.Size(173, 24);
+            this.lblConsulta.Size = new System.Drawing.Size(216, 29);
             this.lblConsulta.TabIndex = 15;
             this.lblConsulta.Text = "Consulta en SQL:";
             // 
             // btnListar
             // 
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.Location = new System.Drawing.Point(543, 190);
+            this.btnListar.Location = new System.Drawing.Point(724, 234);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(79, 28);
+            this.btnListar.Size = new System.Drawing.Size(105, 34);
             this.btnListar.TabIndex = 17;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
@@ -77,16 +81,18 @@
             // 
             // frmBdConsultaSql
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 450);
+            this.ClientSize = new System.Drawing.Size(853, 554);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.txtSQL);
             this.Controls.Add(this.lblConsulta);
             this.Controls.Add(this.dgvCtaSql);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmBdConsultaSql";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas en la Base de Datos";
+            this.Load += new System.EventHandler(this.frmBdConsultaSql_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCtaSql)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
