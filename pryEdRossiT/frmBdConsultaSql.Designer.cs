@@ -39,7 +39,7 @@
             // 
             this.dgvCtaSql.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCtaSql.Location = new System.Drawing.Point(13, 284);
-            this.dgvCtaSql.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCtaSql.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCtaSql.Name = "dgvCtaSql";
             this.dgvCtaSql.RowHeadersVisible = false;
             this.dgvCtaSql.RowHeadersWidth = 51;
@@ -48,6 +48,7 @@
             // 
             // txtSQL
             // 
+            this.txtSQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSQL.Location = new System.Drawing.Point(13, 59);
             this.txtSQL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSQL.Multiline = true;
@@ -71,7 +72,7 @@
             // 
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListar.Location = new System.Drawing.Point(724, 234);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(4);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(105, 34);
             this.btnListar.TabIndex = 17;
@@ -88,7 +89,7 @@
             this.Controls.Add(this.txtSQL);
             this.Controls.Add(this.lblConsulta);
             this.Controls.Add(this.dgvCtaSql);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBdConsultaSql";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas en la Base de Datos";

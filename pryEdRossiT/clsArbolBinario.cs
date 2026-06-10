@@ -40,16 +40,62 @@ namespace pryEdRossiT
                 else ant.Derecho = Nuevo;
             }
         }
+        public void Eliminar (Int32 codigo)
+        {
+            Raiz = EliminarNodo(Raiz, codigo);
+        }
+
+        // Método recursivo que busca y elimina el nodo
+        private clsNodo EliminarNodo(clsNodo R, Int32 codigo)
+        {
+            if (R == null)
+            {
+                MessageBox.Show("El código no existe en el árbol.");
+                return null;
+            }          
+            if (codigo < R.Codigo) R.Izquierdo = EliminarNodo(R.Izquierdo, codigo);  // Si el código es menor voy a la izquierda            
+            else if (codigo > R.Codigo) R.Derecho = EliminarNodo(R.Derecho, codigo); // Si el código es mayor voy a la derecha
+                
+            else
+            {
+                //nodo hoja, sin hijos
+                if (R.Izquierdo == null && R.Derecho == null) return null;
+               
+                //solo tiene hijo derecho
+                else if (R.Izquierdo == null) return R.Derecho;
+               
+                //solo tiene hijo izquierdo
+                else if (R.Derecho == null) return R.Izquierdo;           
+                
+                //tiene dos hijos
+                //Busco el sucesor (el menor nodo del subárbol derecho)
+                else
+                {
+                    clsNodo sucesor = BuscarMinimo(R.Derecho);
+                    R.Codigo = sucesor.Codigo;
+                    R.Nombre = sucesor.Nombre;
+                    R.Tramite = sucesor.Tramite;
+                    R.Derecho = EliminarNodo(R.Derecho, sucesor.Codigo);
+                }
+            }
+            return R;
+        }
+        private clsNodo BuscarMinimo(clsNodo R)
+        {
+            while (R.Izquierdo != null)
+                R = R.Izquierdo;
+            return R;
+        }
+
         public void Recorrer(DataGridView Grilla)
         { 
             Grilla.Rows.Clear();            
-            InOrdenAsc(Grilla, Raiz);
-        
+            InOrdenAsc(Grilla, Raiz);        
         }
 
         private void InOrdenAsc(DataGridView dgv, clsNodo R)
         {
-            if (R.Izquierdo != null) InOrdenAsc(dgv, R.Izquierdo); //El reocrrido es izquierda, raíz, derecha
+            if (R.Izquierdo != null) InOrdenAsc(dgv, R.Izquierdo); //El recorrido es izquierda, raíz, derecha
             dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
             if (R.Derecho != null) InOrdenAsc(dgv, R.Derecho);
         }
@@ -142,5 +188,38 @@ namespace pryEdRossiT
             if (R.Izquierdo != null) PreOrden(R.Izquierdo, nodoPadre);
             if(R.Derecho != null) PreOrden(R.Derecho, nodoPadre);
         }
-    }   
+
+        //Método equilibrar que consiste en Paso 1: recorrer In-Orden y guardar nodos en vector
+        //Paso 2:  Resetear la raíz a null (vaciar el árbol)
+        //Re-insertar los nodos desde el vector usando el índice del medio como nueva raíz, y hacerlo recursivamente para cada mitad izquierda y derecha
+        public void Equilibrar ()
+        {
+            int cantidad = ContarNodos(Raiz);
+            if (cantidad <= 1) return;
+            clsNodo[] vector = new clsNodo[cantidad];
+            Recorrer(vector); 
+            Raiz = null; 
+            InsertarBalanceado(vector, 0, cantidad - 1);
+        }
+        private int ContarNodos(clsNodo R)
+        {
+            if (R == null) return 0;
+            return 1 + ContarNodos(R.Izquierdo) + ContarNodos(R.Derecho);
+        }
+        private void InsertarBalanceado(clsNodo[] vector, int inicio, int fin)
+        {
+            if (inicio > fin) return;
+
+            int medio = (inicio + fin) / 2;
+
+            vector[medio].Izquierdo = null;
+            vector[medio].Derecho = null;
+
+            Agregar(vector[medio]);
+
+            InsertarBalanceado(vector, inicio, medio - 1);
+            InsertarBalanceado(vector, medio + 1, fin);
+        }
+
+    }
 }

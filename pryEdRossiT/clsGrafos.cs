@@ -11,7 +11,6 @@ namespace pryEdRossiT
     {
         //Vector 
         private string[] Ciudades = new string[] { "Córdoba", "Mendoza", "Santa Fé", "Buenos Aires", "Salta" };
-
         //Matriz
         private Decimal[,] Precio = new Decimal[5, 5];
 
